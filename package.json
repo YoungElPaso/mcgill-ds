@@ -1,0 +1,17 @@
+{
+  "name": "mcgill-ds",
+  "version": "1.0.0",
+  "description": "McGill Design System - a set of components and styles to adhere to McGill U. standards.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CSS",
+    "library",
+    "framework",
+    "components"
+  ],
+  "author": "Jesse Sutherland",
+  "license": "ISC"
+}
