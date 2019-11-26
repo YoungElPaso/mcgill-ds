@@ -2,8 +2,12 @@
   "name": "mcgill-ds",
   "version": "1.0.0",
   "description": "McGill Design System - a set of components and styles to adhere to McGill U. standards.",
-  "main": "index.js",
+  "main": "src/mds.scss",
   "scripts": {
+    "demo": "parcel demo/index.html",
+    "build-sass": "sass src/sass:dist/css",
+    "build-js": "echo \"No JS build yet! (Might be Rollup) \" && exit 1",
+    "docs": "echo \"No docs yet! (Might be StoryBook)\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,5 +17,9 @@
     "components"
   ],
   "author": "Jesse Sutherland",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.23.7"
+  }
 }
