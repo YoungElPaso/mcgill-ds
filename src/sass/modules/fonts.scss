@@ -1,0 +1,13 @@
+// McGill Design System.
+// fonts.scss
+// This file specifies the custom fonts that are officially provided by the MDS.
+
+// A mixin to provide serif fonts.
+@mixin serif {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+// A mixin to provide sans-serif fonts.
+@mixin sans-serif {
+  font-family: Arial, Helvetica, sans-serif;
+}
