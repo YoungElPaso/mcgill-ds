@@ -1,0 +1,13 @@
+// Use all of the MDS modules as 'mds'.
+@use '../modules/all-modules' as mds;
+
+// Basic headers tags.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // All use serif font.
+  @include mds.fonts-serif;
+}
