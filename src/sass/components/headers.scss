@@ -11,3 +11,11 @@ h6 {
   // All use serif font.
   @include mds.fonts-serif;
 }
+
+// For demo purposes.
+.h2-sans {
+  font-size: 1.5em;
+  // All use serif font.
+  @include mds.fonts-sans-serif;
+}
+
