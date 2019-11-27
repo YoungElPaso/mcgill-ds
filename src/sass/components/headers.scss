@@ -12,6 +12,11 @@ h6 {
   @include mds.fonts-serif;
 }
 
+h1 {
+  // H1 uses medium serif font.
+  @include mds.fonts-medium-serif;
+}
+
 // For demo purposes.
 .h2-sans {
   font-size: 1.5em;
