@@ -2,6 +2,72 @@
 // fonts.scss
 // This file specifies the custom fonts that are officially provided by the MDS.
 
+
+// Variable for path to fonts.
+$asset-path-font : "../../../assets/fonts";
+
+// Currently used variants of the Mcgill custom fonts.
+@font-face {
+  font-family: 'McGillSans-Regular';
+  src: url('#{$asset-path-font}/McGillSans-Regular.eot');
+  src: url('#{$asset-path-font}/McGillSans-Regular.eot?#iefix') format('embedded-opentype'),
+  url('#{$asset-path-font}/McGillSans-Regular.woff') format('woff'),
+  url('#{$asset-path-font}/McGillSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+@font-face {
+  font-family: 'McGillSans-Medium';
+  src: url('#{$asset-path-font}/McGillSans-Medium.eot');
+  src: url('#{$asset-path-font}/McGillSans-Medium.eot?#iefix') format('embedded-opentype'),
+  url('#{$asset-path-font}/McGillSans-Medium.woff') format('woff'),
+  url('#{$asset-path-font}/McGillSans-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'McGillSans-Italic';
+  src: url('#{$asset-path-font}/McGillSans-Italic.eot');
+  src: url('#{$asset-path-font}/McGillSans-Italic.eot?#iefix') format('embedded-opentype'),
+  url('#{$asset-path-font}/McGillSans-Italic.woff') format('woff'),
+  url('#{$asset-path-font}/McGillSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+font-family: 'McGillSerif-Regular';
+src: url('#{$asset-path-font}/McGillSerif-Regular.eot');
+src: url('#{$asset-path-font}/McGillSerif-Regular.eot?#iefix') format('embedded-opentype'),
+url('#{$asset-path-font}/McGillSerif-Regular.woff') format('woff'),
+url('#{$asset-path-font}/McGillSerif-Regular.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'McGillSerif-Medium';
+  src: url('#{$asset-path-font}/McGillSerif-Medium.eot');
+  src: url('#{$asset-path-font}/McGillSerif-Medium.eot?#iefix') format('embedded-opentype'),
+  url('#{$asset-path-font}/McGillSerif-Medium.woff') format('woff'),
+  url('#{$asset-path-font}/McGillSerif-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'McGillSerif-Italic';
+  src: url('#{$asset-path-font}/McGillSerif-Italic.eot');
+  src: url('#{$asset-path-font}/McGillSerif-Italic.eot?#iefix') format('embedded-opentype'),
+  url('#{$asset-path-font}/McGillSerif-Italic.woff') format('woff'),
+  url('#{$asset-path-font}/McGillSerif-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 // Variable to hold standard serif fonts.
 $standard-serif: Georgia, 'Times New Roman', Times, serif;
 
@@ -9,18 +75,26 @@ $standard-serif: Georgia, 'Times New Roman', Times, serif;
 $standard-sans-serif: Arial, Helvetica, sans-serif;
 
 // Variable to hold McGill serif fonts.
-$mcgill-standard-serif:'';
+$mcgill-standard-serif: 'McGillSerif-Regular';
+
+// Variable to hold McGill medium serif fonts.
+$mcgill-medium-serif: 'McGillSerif-Medium';
 
 // Variable to hold McGill sans-serif fonts.
-$mcgill-standard-sans-serif:'';
+$mcgill-standard-sans-serif: 'McgillSans-Regular';
 
 // A mixin to provide serif fonts.
 @mixin serif {
-  font-family: $standard-serif;
+  font-family: $mcgill-standard-serif, $standard-serif;
   color: hotpink;
 }
 
 // A mixin to provide sans-serif fonts.
 @mixin sans-serif {
-  font-family: $standard-sans-serif;
+  font-family: $mcgill-standard-sans-serif, $standard-sans-serif;
+}
+
+// A mixin to provide medium serif fonts.
+@mixin medium-serif {
+  font-family: $mcgill-medium-serif, $standard-serif;
 }
