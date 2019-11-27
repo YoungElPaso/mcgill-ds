@@ -2,12 +2,25 @@
 // fonts.scss
 // This file specifies the custom fonts that are officially provided by the MDS.
 
+// Variable to hold standard serif fonts.
+$standard-serif: Georgia, 'Times New Roman', Times, serif;
+
+// Variable to hold standard serif fonts.
+$standard-sans-serif: Arial, Helvetica, sans-serif;
+
+// Variable to hold McGill serif fonts.
+$mcgill-standard-serif:'';
+
+// Variable to hold McGill sans-serif fonts.
+$mcgill-standard-sans-serif:'';
+
 // A mixin to provide serif fonts.
 @mixin serif {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: $standard-serif;
+  color: hotpink;
 }
 
 // A mixin to provide sans-serif fonts.
 @mixin sans-serif {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $standard-sans-serif;
 }
