@@ -7,13 +7,16 @@
 
   // Export the pageHeadLine property.
   export let pageHeadLine = 'Page Headline';
+
+  // Export the logoSize propery.
+  export let logoSize = null;
 </script>
 
 <div class="page-header">
 <!--This uses FontProvider to style the header).-->
   <FontProvider>
     <a href="/" title="Home Link">
-      <Logo />
+      <Logo size="{logoSize}" />
       <h1>{pageHeadLine}</h1>
     </a>
     <h3>Page blurb</h3>
