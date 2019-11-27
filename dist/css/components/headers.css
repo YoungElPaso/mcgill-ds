@@ -8,4 +8,9 @@ h6 {
   color: hotpink;
 }
 
+.h2-sans {
+  font-size: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /*# sourceMappingURL=headers.css.map */

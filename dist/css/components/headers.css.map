@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../../src/sass/components/headers.scss","../../../src/sass/modules/fonts.scss"],"names":[],"mappings":"AAIA;AAAA;AAAA;AAAA;AAAA;AAAA;ECcE,aAbe;EAcf","file":"headers.css"}
+{"version":3,"sourceRoot":"","sources":["../../../src/sass/components/headers.scss","../../../src/sass/modules/fonts.scss"],"names":[],"mappings":"AAIA;AAAA;AAAA;AAAA;AAAA;AAAA;ECcE,aAbe;EAcf;;;ADJF;EACE;ECQA,aAhBoB","file":"headers.css"}
