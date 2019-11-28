@@ -1,0 +1,13 @@
+// Use all of the MDS modules as 'mds'.
+@use '../modules/all-modules' as mds;
+
+
+.sample-component {
+  h1 {
+    // Fake component header uses sans-serif!
+    @include mds.fonts-sans-serif;
+  }
+  p {
+    @include mds.fonts-serif;
+  }
+}

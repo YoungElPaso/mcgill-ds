@@ -1,0 +1,11 @@
+// McGill Design System.
+// mds.scss
+// This file includes all source Sass files.
+
+// Import all components.
+
+// Import headers into this file.
+@use './components/headers';
+
+// Import fake-component into this file.
+@use './components/sample-component';

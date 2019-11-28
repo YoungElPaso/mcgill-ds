@@ -1,0 +1,29 @@
+{
+  "name": "mcgill-ds",
+  "version": "1.0.0",
+  "description": "McGill Design System - a set of components and styles to adhere to McGill U. standards.",
+  "main": "src/mds.scss",
+  "scripts": {
+    "demo": "parcel demo.html --out-dir demo-build",
+    "build-main-css": "sass --load-path=src/sass-config/css-build/ src/sass/mds.scss:dist/css/mds.css",
+    "build-css-components": "sass --load-path=src/sass-config/css-build/ src/sass/components:dist/css/",
+    "bundle-css": "npm run build-main-css && npm run build-css-components",
+    "bundle-assets": "cp -r ./assets/* dist",
+    "build-js": "echo \"No JS build yet! (Might be Rollup) \" && exit 1",
+    "bundle-all": "npm run bundle-assets && npm run bundle-css",
+    "docs": "echo \"No docs yet! (Might be StoryBook)\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CSS",
+    "library",
+    "framework",
+    "components"
+  ],
+  "author": "Jesse Sutherland",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.23.7"
+  }
+}
