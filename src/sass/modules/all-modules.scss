@@ -3,3 +3,6 @@
 
 // Forwards fonts for use with other files.
 @forward './fonts' as fonts-*;
+
+// Forwards config for use with other files.
+@forward 'sass-config' as 'config-*';
