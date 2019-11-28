@@ -1,23 +1,69 @@
+@font-face {
+  font-family: "McGillSans-Regular";
+  src: url("../fonts/McGillSans-Regular.eot");
+  src: url("../fonts/McGillSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/McGillSans-Regular.woff") format("woff"), url("../fonts/McGillSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "McGillSans-Medium";
+  src: url("../fonts/McGillSans-Medium.eot");
+  src: url("../fonts/McGillSans-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/McGillSans-Medium.woff") format("woff"), url("../fonts/McGillSans-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "McGillSans-Italic";
+  src: url("../fonts/McGillSans-Italic.eot");
+  src: url("../fonts/McGillSans-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/McGillSans-Italic.woff") format("woff"), url("../fonts/McGillSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "McGillSerif-Regular";
+  src: url("../fonts/McGillSerif-Regular.eot");
+  src: url("../fonts/McGillSerif-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/McGillSerif-Regular.woff") format("woff"), url("../fonts/McGillSerif-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "McGillSerif-Medium";
+  src: url("../fonts/McGillSerif-Medium.eot");
+  src: url("../fonts/McGillSerif-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/McGillSerif-Medium.woff") format("woff"), url("../fonts/McGillSerif-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "McGillSerif-Italic";
+  src: url("../fonts/McGillSerif-Italic.eot");
+  src: url("../fonts/McGillSerif-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/McGillSerif-Italic.woff") format("woff"), url("../fonts/McGillSerif-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "McGillSerif-Regular", Georgia, "Times New Roman", Times, serif;
   color: hotpink;
+}
+
+h1 {
+  font-family: "McGillSerif-Medium", Georgia, "Times New Roman", Times, serif;
 }
 
 .h2-sans {
   font-size: 1.5em;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "McgillSans-Regular", Arial, Helvetica, sans-serif;
 }
 
 .sample-component h1 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "McgillSans-Regular", Arial, Helvetica, sans-serif;
 }
 .sample-component p {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "McGillSerif-Regular", Georgia, "Times New Roman", Times, serif;
   color: hotpink;
 }
 
