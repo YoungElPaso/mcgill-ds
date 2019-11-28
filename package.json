@@ -4,7 +4,6 @@
   "description": "McGill Design System - a set of components and styles to adhere to McGill U. standards.",
   "main": "src/mds.scss",
   "scripts": {
-    "demo": "parcel demo/index.html",
     "build-main-css": "sass --load-path=src/sass-config/css-build/ src/sass/mds.scss:dist/css/mds.css",
     "build-css-components": "sass --load-path=src/sass-config/css-build/ src/sass/components:dist/css/",
     "bundle-css": "npm run build-main-css && npm run build-css-components",
