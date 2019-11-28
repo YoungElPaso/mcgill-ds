@@ -5,7 +5,7 @@
   "main": "src/mds.scss",
   "scripts": {
     "demo": "parcel demo/index.html",
-    "build-sass": "sass src/sass:dist/css",
+    "build-css": "sass --load-path=src/sass-config/css-build/ src/sass:dist/css",
     "build-js": "echo \"No JS build yet! (Might be Rollup) \" && exit 1",
     "docs": "echo \"No docs yet! (Might be StoryBook)\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
