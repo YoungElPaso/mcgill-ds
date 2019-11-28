@@ -3,8 +3,20 @@
 // This file specifies the custom fonts that are officially provided by the MDS.
 
 
+@use 'sass-config';
+
+$asset-path-font: sass-config.$asset-path-font;
+
 // Variable for path to fonts.
-$asset-path-font : "../../../assets/fonts";
+// $asset-path-font : "../../../assets/fonts"; // Good for Sass. This is where the fonts do live...
+// TODO: this needs to be changed to something that works as well at CSS build-time. Probably needs multiple builds...A sass one and a fonts-one so the fonts can be distributed as well, like so: src: url("./fonts/McGillSans-Medium.eot");
+
+// $css-bundle-asset-path-fonts: "../fonts"; // Good for CSS dist build cause fonts need to be bundled WITH the CSS.
+
+// Need a way to bundle the CSS differently for the big CSS build that would be distributed and use that variable instead. In reality what you would do is use the build task to put css and fonts in the dist dir together:
+// dist/fonts and dist/css. The CSS can have a different relative path to the fonts than the Sass does. So, there would be 2 distinct build processes. And you wouldn't call the CSS straight from the node_modules anyway.
+
+
 
 // Currently used variants of the Mcgill custom fonts.
 @font-face {
