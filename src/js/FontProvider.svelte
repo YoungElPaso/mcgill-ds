@@ -11,12 +11,12 @@
       Extra font styles provided in this component!
     </p>
     <p>
-      The next text should be big like an h2 header, but yellow and sans-serif.
+      The next text should be big like an h2 header, but red and sans-serif.
     </p>
   {/if}
 
   <div class="h2-sans">
-    <slot />
+    <slot><strong>Hi! I'm big like an H2 but with McGill-Sans instead of Serif.</strong></slot>
   </div>
 
 
@@ -27,7 +27,7 @@
   @import "../../dist/css/headers.css";
   /* Component specific override */
   .h2-sans {
-    color:yellow;
+    color:red;
   }
 
 </style>
