@@ -1,0 +1,6 @@
+{
+  "includePaths": [
+    // Required so the Demo can be run by Parcel - source of config.
+    "./demo"
+  ]
+}
