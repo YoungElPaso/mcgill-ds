@@ -5,7 +5,8 @@
 // Ideally if they were blank, this would do nothing...but that's not an option at the moment.
 @use '../configuration/default' with (
   // This is the only configuration item that can be overriden now, others can be added.
-  $asset-path: c.$asset-path
+  $asset-path: c.$asset-path,
+  $asset-path-font: c.$asset-path-font
 );
 
 // Forward new config with overrides.
