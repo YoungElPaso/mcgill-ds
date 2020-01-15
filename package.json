@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "npm run docs",
 
-    "old-build": "npm run build:copy-assets && npm run build:css",
     "build": "npm run build:copy-assets && npm run build:css",
     "build:copy-assets": "cp -r ./src/sass/assets/* dist/assets",
     "build:css": "npm run build:main-css && npm run build:css-components",
@@ -19,10 +18,7 @@
 
     "deploy": "echo \"No deploy yet!\" && exit 1",
 
-    "demo": "parcel examples/parcel-static-site/index.html --out-dir ./demo-build --no-cache --log-level 4s",
-
-    "old-demo": "cd examples/parcel-static-site/ && parcel index.html --out-dir ../../demo-build --no-cache"
-    
+    "demo": "parcel examples/parcel-static-site/index.html --out-dir ./demo-build --no-cache --log-level 4s"    
   },
   "keywords": [
     "CSS",
