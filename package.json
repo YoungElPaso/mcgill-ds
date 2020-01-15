@@ -4,15 +4,25 @@
   "description": "McGill Design System - a set of components and styles to adhere to McGill U. standards.",
   "main": "src/mds.scss",
   "scripts": {
-    "demo": "parcel demo.html --out-dir demo-build",
-    "build-main-css": "sass --load-path=src/sass-config/css-build/ src/sass/mds.scss:dist/css/mds.css",
-    "build-css-components": "sass --load-path=src/sass-config/css-build/ src/sass/components:dist/css/",
-    "bundle-css": "npm run build-main-css && npm run build-css-components",
-    "bundle-assets": "cp -r ./assets/* dist",
-    "build-js": "echo \"No JS build yet! (Might be Rollup) \" && exit 1",
-    "bundle-all": "npm run bundle-assets && npm run bundle-css",
-    "docs": "echo \"No docs yet! (Might be StoryBook)\" && exit 1",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run docs",
+
+    "old-build": "npm run build:copy-assets && npm run build:css",
+    "build": "npm run build:copy-assets && npm run build:css",
+    "build:copy-assets": "cp -r ./src/sass/assets/* dist/assets",
+    "build:css": "npm run build:main-css && npm run build:css-components",
+    "build:main-css": "sass --load-path=src/sass src/sass/mds.scss:dist/css/mds.css",
+    "build:css-components": "sass --load-path=src/sass src/sass/components:dist/css/components",
+
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "docs": "echo \"Not docs yet!\" && exit 1",
+
+    "deploy": "echo \"No deploy yet!\" && exit 1",
+
+    "demo": "parcel examples/parcel-static-site/index.html --out-dir ./demo-build --no-cache --log-level 4s",
+
+    "old-demo": "cd examples/parcel-static-site/ && parcel index.html --out-dir ../../demo-build --no-cache"
+    
   },
   "keywords": [
     "CSS",
