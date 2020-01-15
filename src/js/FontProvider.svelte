@@ -24,7 +24,7 @@
   /* Import some CSS from mds. */
     /* TODO: Import Sass instead ? Will Parcel compile this right? I doub it... 
     Correct, this doesn't work. Probably need a pre-process plugin and then I fully expect it would.*/
-  @import "../../dist/css/headers.css";
+  @import "../../dist/css/components/headers.css";
   /* Component specific override */
   .h2-sans {
     color:red;
