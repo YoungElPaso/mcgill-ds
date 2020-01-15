@@ -40,25 +40,6 @@
   font-weight: normal;
   font-style: normal;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "McGillSerif-Regular", Georgia, "Times New Roman", Times, serif;
-  color: hotpink;
-}
-
-h1 {
-  font-family: "McGillSerif-Medium", Georgia, "Times New Roman", Times, serif;
-}
-
-.h2-sans {
-  font-size: 1.5em;
-  font-family: "McgillSans-Regular", Arial, Helvetica, sans-serif;
-}
-
 .sample-component h1 {
   font-family: "McgillSans-Regular", Arial, Helvetica, sans-serif;
 }
@@ -67,4 +48,4 @@ h1 {
   color: hotpink;
 }
 
-/*# sourceMappingURL=mds.css.map */
+/*# sourceMappingURL=sample-component.css.map */
