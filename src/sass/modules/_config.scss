@@ -1,0 +1,12 @@
+// Load custom configuration to override defaults. This should be next to the entry point file.
+@use 'mds.custom.config' as c;
+
+// Load default config, override with custom values.
+// Ideally if they were blank, this would do nothing...but that's not an option at the moment.
+@use '../configuration/default' with (
+  // This is the only configuration item that can be overriden now, others can be added.
+  $asset-path: c.$asset-path
+);
+
+// Forward new config with overrides.
+@forward '../configuration/default' as new-*;

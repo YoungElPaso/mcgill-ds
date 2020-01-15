@@ -1,0 +1,20 @@
+$asset-path: '../assets/' !default; 
+$asset-path-font: '#{$asset-path}fonts' !default;
+
+
+
+// @use "custom-config";
+// //  with (
+// //   // Asset path must be set to root of /dist in build of CSS.
+// //   // $asset-path: '../', 
+// //   // $asset-path-font: '#{$asset-path}fonts',
+// // );
+
+// $customed: custom-config.$custom;
+
+// @debug $customed;
+
+// @if ($customed == true) {
+//   $asset-path: custom-config.$asset-path;
+//   $asset-path-font: '#{$asset-path}fonts';
+// }
