@@ -9,22 +9,6 @@
 // Variable for path to fonts.
 $asset-path-font: config.$new-asset-path-font;
 
-//TODO: Need to re-think how config is handled. Its too complicated right now, though it works. The below function(s) that checks for customized variables might be better...
-// $config-vars: module-variables(config);
-// @each $var in $config-vars {
-//   @debug 'variable:';
-//   @debug $var;
-//   // Set localized variables to use config variables?
-// }
-
-// @if variable-exists("config.custom-custom-flag") {
-//   @debug "Custom flag is set.";
-//   // Assign local variables based on custom config?
-//   $localized-variable: config.$custom-custom-flag;
-// } @else {
-//   @debug "No custom flag set, so don't use custom!";
-// }
-
 // Currently used variants of the Mcgill custom fonts.
 @font-face {
   font-family: 'McGillSans-Regular';
