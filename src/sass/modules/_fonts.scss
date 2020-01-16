@@ -3,23 +3,27 @@
 // This file specifies the custom fonts that are officially provided by the MDS.
 
 
-// Load configuration module.
+// Load configuration module to get important variables.
 @use 'config';
 
+// Variable for path to fonts.
 $asset-path-font: config.$new-asset-path-font;
 
-// Variable for path to fonts.
-// $asset-path-font : "../../../assets/fonts"; // Good for Sass. This is where the fonts do live...
-// TODO: this needs to be changed to something that works as well at CSS build-time. Probably needs multiple builds...A sass one and a fonts-one so the fonts can be distributed as well, like so: src: url("./fonts/McGillSans-Medium.eot");
+//TODO: Need to re-think how config is handled. Its too complicated right now, though it works. The below function(s) that checks for customized variables might be better...
+// $config-vars: module-variables(config);
+// @each $var in $config-vars {
+//   @debug 'variable:';
+//   @debug $var;
+//   // Set localized variables to use config variables?
+// }
 
-// $css-bundle-asset-path-fonts: "../fonts"; // Good for CSS dist build cause fonts need to be bundled WITH the CSS.
-
-// Need a way to bundle the CSS differently for the big CSS build that would be distributed and use that variable instead. In reality what you would do is use the build task to put css and fonts in the dist dir together:
-// dist/fonts and dist/css. The CSS can have a different relative path to the fonts than the Sass does. So, there would be 2 distinct build processes. And you wouldn't call the CSS straight from the node_modules anyway.
-
-// $asset-path: '/src/sass/assets/';
-// $asset-path-font: '#{$asset-path}fonts' !default;
-// @debug $asset-path-font;
+// @if variable-exists("config.custom-custom-flag") {
+//   @debug "Custom flag is set.";
+//   // Assign local variables based on custom config?
+//   $localized-variable: config.$custom-custom-flag;
+// } @else {
+//   @debug "No custom flag set, so don't use custom!";
+// }
 
 // Currently used variants of the Mcgill custom fonts.
 @font-face {
