@@ -1,13 +1,28 @@
 // McGill Design System.
 // fonts.scss
 // This file specifies the custom fonts that are officially provided by the MDS.
+// 
+// Local variables:
+// * asset-path-font
+// * highlight-color
+//// TODO: some modules should have variables that can be loaded into the module scope using the @use with() syntax. We need a way to expose those or at least list at the top of each module file, like here.
 
+
+// TODO: ~config: defaults - shove all into that~, ~font-path get rid off in settings, belongs here in fonts~, ~and add palette map for colors~. Also should have a 'required' module that can't be changed (ie. for branding).
+
+// Load common utilities module, hoist into universal namespace.
+@use 'common-functions' as *;
 
 // Load configuration module to get important variables.
 @use 'config';
 
-// Variable for path to fonts.
-$asset-path-font: config.$new-asset-path-font;
+// Set variable for path to fonts.
+$asset-path: config.get(asset-path);
+$asset-path-font: '#{$asset-path}fonts';
+
+// Set highlight color for headers.
+// Load the palette from config & load the color from the theme and the palette.
+$highlight-color: getPaletteColor(config.get(palette), 'dark', 'highlight-color');
 
 // Currently used variants of the Mcgill custom fonts.
 @font-face {
@@ -89,7 +104,7 @@ $mcgill-standard-sans-serif: 'McgillSans-Regular';
 // A mixin to provide serif fonts.
 @mixin serif {
   font-family: $mcgill-standard-serif, $standard-serif;
-  color: hotpink;
+  color: $highlight-color;
 }
 
 // A mixin to provide sans-serif fonts.
