@@ -1,13 +1,18 @@
-// Load custom configuration to override defaults. This should be next to the entry point file.
+// Config module. 
+// Loads configuration from default source and re-maps some required overrides onto it and forwards that configuration as well as custom variables for use in other modules.
+
+// Load custom configuration to override required defaults and pass other custom variables. This should be next to the entry point file.
 @use 'mds.custom.config' as c;
 
 // Load default config, override with custom values.
-// Ideally if they were blank, this would do nothing...but that's not an option at the moment.
 @use '../configuration/default' with (
-  // This is the only configuration item that can be overriden now, others can be added.
+  // These are the only required configuration items and can be overriden, others can be added as needed.
   $asset-path: c.$asset-path,
   $asset-path-font: c.$asset-path-font
 );
 
 // Forward new config with overrides.
 @forward '../configuration/default' as new-*;
+
+// Forward custom config in its own namespace so other variables specified in it can be used as well.
+@forward 'mds.custom.config' as custom-*;
