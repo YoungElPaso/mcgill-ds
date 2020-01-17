@@ -9,7 +9,7 @@
   export let pageHeadLine = 'Page Headline';
 
   // Export the logoSize propery.
-  export let logoSize = null;
+  export let logoSize;
 </script>
 
 <div class="page-header">
