@@ -24,22 +24,36 @@
 </div>
 
 
-<style>
+<style lang="scss">
+  // Load common functions module.
+  @use '../sass/modules/common-functions' as *;
+  
+  // Load configuration module to get important variables, override some.
+  @use '../sass/modules/config' with (
+    // Local override!
+    $overrides: (
+      // default-palette: basie-dark
+      ),
+  );
+
+  // Get a color from the palette.
+  $header-bg: getPaletteColor(config.get(palette), config.get(default-palette), 'background-color');
+
   .page-header {
-    border: 1px solid white;
     padding: 0 1em;
-    background: #555;
+    background: $header-bg;
   }
-  /* Overrides some styles from default Headers CSS component. */
+
+  /* Overrides some styles from default Headers CSS component. 
   h1 {
     color: white;
   }
-  /* Overrides some styles from default Headers CSS component. */
+  // Overrides some styles from default Headers CSS component.
   h3 {
     font-size: smaller;
-    color: #1f1f1f;
+    color: #1f1f1f; 
   }
   p {
     font-size: small;
-  }
+  } */
 </style>
