@@ -15,6 +15,14 @@ $defaults: module-variables(default);
 // Assign all of the variables from custom config to a map.
 $customs: module-variables(custom);
 
+// Last minute overrides. These are assigned by using the module syntax:
+// @use 'foo' with($overrides);
+$overrides: () !default; // TODO: need to document how to supply overides.
+
+@if (variable-exists('overrides')) {
+  $customs: map-merge($customs, $overrides);
+}
+
 // Merge default settings and custom settings, overriding default with custom where new settings exist.
 // TODO: should have 'required' settings as well that are cannot be overriden.
 $merged-settings: map-merge($defaults, $customs);
