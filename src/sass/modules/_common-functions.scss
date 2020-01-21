@@ -3,12 +3,12 @@
 // This file specifies common functions that are useful for all modules.
 
 // A helper function to retrieve colors from a palette with the following structure:
-// $palette: ( //$palette.
-//   dark: ( // $theme.
-//     background-color: #333, // $color.
-//     highlight-color: hotpink,
-//     debug-color: red
-//   )
+//$palette: ( //$palette.
+//  basie: (
+//    //Default background color.
+//    background-color: white,
+//    ...
+//  )
 @function getPaletteColor($palette, $theme, $color) {
   $theme: map-get($palette, $theme);
   @return map-get($theme, $color);
