@@ -20,14 +20,15 @@
   </div>
 
 
-<style>
-  /* Import some CSS from mds. */
-    /* TODO: Import Sass instead ? Will Parcel compile this right? I doub it... 
-    Correct, this doesn't work. Probably need a pre-process plugin and then I fully expect it would.*/
-  @import "../../dist/css/components/headers.css";
+<style lang="scss">
+
+  /* Import headers components from Sass. */
+  @import "../sass/components/headers.scss";
+  // TODO: really this should import fonts module and go from there, not use headers. Ideally, use sass/components/fontprovider.scss
+
   /* Component specific override */
-  .h2-sans {
-    color:red;
-  }
+  // .h2-sans {
+  //   color:red;
+  // }
 
 </style>
