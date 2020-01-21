@@ -1,3 +1,6 @@
+// Require path to find some Sass config so all components can use any mcgill-ds module that uses custom config.
+path = require('path');
+
 // Configuration for Storybook.
 module.exports = {
   // Add to Storybook's webpack config with rules for preprocessing Sass in Svelte.
@@ -6,19 +9,25 @@ module.exports = {
     let newRules = [
       {
         test: /\.(svelte|html)$/,
+        exclude: /node_modules/,
         use: {
           loader: "svelte-loader",
           options: {
             // Allows Sass to be included in Svelte components.
             preprocess: require("svelte-preprocess")({
-              sass: true
+              scss: {
+                includePaths: [
+                  // Required so that Storybook can find the configuration file.
+                  path.resolve(__dirname)
+                ]
+              }
             })
           }
         }
       },
       {
-        // Required to load SVG and other images.
-        test: /\.(png|svg|jpg|gif)$/,
+        // Required to load SVG and other images and files.
+        test: /\.(png|svg|jpg|gif|woff)$/,
         use: ["file-loader"]
       }
     ];
