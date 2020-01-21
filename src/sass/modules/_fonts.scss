@@ -22,7 +22,7 @@ $asset-path-font: '#{$asset-path}fonts';
 
 // Set highlight color for headers.
 // Load the palette from config & load the color from the theme and the palette.
-$highlight-color: getPaletteColor(config.get(palette), 'dark', 'highlight-color');
+$highlight-color: getPaletteColor(config.get(palette), config.get(default-palette), 'accent');
 
 // Currently used variants of the Mcgill custom fonts.
 // TODO: modules should not directly write CSS! The following font-face declarations should be in a component that *should* be loaded with any component that requires these fonts. Or, conversely, this is fine and every component that depends on these font face should also include them? Problem is that CSS doesn't have a dependency mechanism - although that's also a strength. Also to NB: Parcel and other bundlers *will* de-dupe!
@@ -111,9 +111,11 @@ $mcgill-standard-sans-serif: 'McgillSans-Regular';
 // A mixin to provide sans-serif fonts.
 @mixin sans-serif {
   font-family: $mcgill-standard-sans-serif, $standard-sans-serif;
+  color: $highlight-color;
 }
 
 // A mixin to provide medium serif fonts.
 @mixin medium-serif {
   font-family: $mcgill-medium-serif, $standard-serif;
+  color: $highlight-color;
 }
