@@ -11,7 +11,7 @@
     "build:main-css": "sass --load-path=src/sass src/sass/mds.scss:dist/css/all/mds.css",
     "build:css-components": "sass --load-path=src/sass src/sass/components:dist/css/components",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook --ci --port=3001",
+    "storybook": "start-storybook -s ./src/ --ci --port=3001",
     "site:build": "parcel .site/index.html --out-dir ./tmp/site-tmp --no-cache --log-level 4",
     "docs": "run-p --race storybook site:build",
     "deploy": "echo \"No deploy yet!\" && exit 1",
