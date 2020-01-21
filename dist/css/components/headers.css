@@ -47,16 +47,18 @@ h4,
 h5,
 h6 {
   font-family: "McGillSerif-Regular", Georgia, "Times New Roman", Times, serif;
-  color: hotpink;
+  color: #03a9f4;
 }
 
 h1 {
   font-family: "McGillSerif-Medium", Georgia, "Times New Roman", Times, serif;
+  color: #03a9f4;
 }
 
 .h2-sans {
   font-size: 1.5em;
   font-family: "McgillSans-Regular", Arial, Helvetica, sans-serif;
+  color: #03a9f4;
 }
 
 /*# sourceMappingURL=headers.css.map */

@@ -42,10 +42,11 @@
 }
 .sample-component h1 {
   font-family: "McgillSans-Regular", Arial, Helvetica, sans-serif;
+  color: #03a9f4;
 }
 .sample-component p {
   font-family: "McGillSerif-Regular", Georgia, "Times New Roman", Times, serif;
-  color: hotpink;
+  color: #03a9f4;
 }
 
 /*# sourceMappingURL=sample-component.css.map */
