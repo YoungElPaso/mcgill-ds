@@ -1,0 +1,64 @@
+// Location of assets required for fonts, logos etc.
+$asset-path: '../../assets/' !default;
+// TODO: need a 'no-fonts' option so fonts aren't always bundled. Probably needs to be a build-step too though.
+$default-palette: 'basie';
+$palette: (
+  basie: (
+    // Default background color.
+    background-color: white,
+    
+    // Default text color.
+    text: #212121,
+
+    // Medium text color.
+    text-medium: #727272,
+
+    // Primary branding color.
+    primary: #ED1B2F,
+
+    // Secondary branding color.
+    secondary: #BE1121,
+
+    // Accent color for UI emphasis.
+    accent: #03a9f4,
+
+    // Default border color.
+    border: #B6B6B6,
+
+    // Lighter border color.
+    border-light: #ECEFF1,
+
+    // Debugging colors.
+    debug-color: green,
+    debug-highlight-color: hotpink
+  ),
+  basie-dark: (
+    // Default background color.
+    background-color: #333,
+    
+    // Default text color.
+    text: #ECEFF1,
+
+    // Medium text color.
+    text-medium: #727272,
+
+    // Primary branding color.
+    primary: #ED1B2F,
+
+    // Secondary branding color.
+    secondary: #BE1121,
+
+    // Accent color for UI emphasis.
+    accent:#03a9f4,
+
+    // Default border color.
+    border:#B6B6B6,
+
+    // Lighter border color.
+    border-light:#ECEFF1,
+
+    // Debugging colors.
+    debug-color: green,
+    debug-highlight-color: hotpink
+  )
+);

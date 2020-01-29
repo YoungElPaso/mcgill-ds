@@ -1,0 +1,43 @@
+// Config module. 
+// Loads configuration from default source and re-maps some required overrides onto it and forwards that configuration as well as custom variables for use in other modules.
+
+// Load the default configuration.
+@use '../configuration/default' as default;
+
+// Assign all of the variables from default config to a map.
+$defaults: module-variables(default);
+
+
+// Load custom configuration to override required defaults and pass other custom variables. This should be next to the entry point file. Unfortunately this file is required whether it is empty or not because Sass doesn't provide a way to conditionally load a file or catch an error if it doesn't exist.
+// TODO: to get around having to have a mds.custom.config file should probably just change the custom config to a global variable that you can use in your entry point and check if it exists in _config and merge it if so.
+@use 'mds.custom.config' as custom; // TODO: can still use this functionality, but for 'required' instead of custom, custom can be handled in global variable.
+
+// Assign all of the variables from custom config to a map.
+$customs: module-variables(custom);
+
+// Last minute overrides. These are assigned by using the module syntax:
+// @use 'foo' with($overrides);
+$overrides: () !default; // TODO: need to document how to supply overides.
+
+@if (variable-exists('overrides')) {
+  $customs: map-merge($customs, $overrides);
+}
+
+// Merge default settings and custom settings, overriding default with custom where new settings exist.
+// TODO: should have 'required' settings as well that are cannot be overriden.
+$merged-settings: map-merge($defaults, $customs);
+
+// A function to access default settings map.
+@function default($key) {
+  @return map-get($defaults, $key);
+}
+
+// A functin to access custom settings map.
+@function custom($key) {
+  @return map-get($customs, $key);
+}
+
+// A function to access the new settings map. This is the preferred method of accessing a settings variable.
+@function get($key) {
+  @return map-get($merged-settings, $key);
+}

@@ -1,0 +1,5 @@
+// For our build this defers to default.scss and doesn't need to modify any settings. This file is still required though because SASS cannot handle importing a non-existant file.
+// Other use cases (such as using Parcel bundler) will require setting $asset-path, like:
+$asset-path: 'sass/assets/';
+// To wherever assets (fonts/images) are stored.
+$default-palette: 'basie';
