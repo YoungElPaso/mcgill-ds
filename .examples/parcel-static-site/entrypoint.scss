@@ -9,8 +9,9 @@
   ),
 );
 
-// Get all of the MDS components I want, in this case, just headers.
+// Get all of the MDS components I want, in this case, just headers and sample-components.
 @use '~/../src/sass/components/headers';
+@use '~/../src/sass/components/sample-component';
 
 // Use the functions supplied from config module, with palette from the same to specify the background color, assigning to local variable.
 $body-bg: getPaletteColor(config.get(palette), config.get(default-palette), 'background-color');
@@ -20,6 +21,7 @@ $body-color: getPaletteColor(config.get(palette), config.get(default-palette), '
 
 // Set body background.
 body {
-  background: $body-bg;
-  color: $body-color;
+  padding: 1em;
+  // background: $body-bg !important;
+  // color: $body-color !important;
 }
