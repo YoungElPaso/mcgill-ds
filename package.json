@@ -1,5 +1,5 @@
 {
-  "name": "mcgill-ds",
+  "name": "@mcgill/mcgill-ds",
   "version": "1.0.0",
   "description": "McGill Design System - a set of components and styles to adhere to McGill U. standards.",
   "main": "src/mds.scss",
