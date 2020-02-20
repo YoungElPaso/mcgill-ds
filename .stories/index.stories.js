@@ -4,10 +4,11 @@ import PageHeader from '../src/js/PageHeader.svelte';
 import Logo from '../src/js/Logo.svelte';
 
 // Story definitions.
-export default { title: 'Page Header' }
+export default { title: 'Page Header' };
 
 
 export const withHeadlineAndDefaultLargeLogo = () => ({
+  "use strict";
   Component: PageHeader,
   props: {
     pageHeadLine: 'This is a headline!',
@@ -16,6 +17,7 @@ export const withHeadlineAndDefaultLargeLogo = () => ({
 });
 
 export const withHeadlineAndMediumLogo = () => ({
+  "use strict";
   Component: PageHeader,
   props: {
     pageHeadLine: 'This is a headline.',
@@ -24,6 +26,7 @@ export const withHeadlineAndMediumLogo = () => ({
 });
 
 export const withHeadlineAndSmallLogo = () => ({
+  "use strict";
   Component: PageHeader,
   props: {
     pageHeadLine: 'This is a headline.',
@@ -32,6 +35,7 @@ export const withHeadlineAndSmallLogo = () => ({
 });
 
 export const LargeLogo = () => ({
+  "use strict";
   Component: Logo,
   props: {
     // pageHeadLine: 'This is a headline!',
