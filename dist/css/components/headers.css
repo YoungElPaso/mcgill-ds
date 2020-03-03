@@ -40,25 +40,19 @@
   font-weight: normal;
   font-style: normal;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "McGillSerif-Regular", Georgia, "Times New Roman", Times, serif;
-  color: #03a9f4;
-}
-
-h1 {
-  font-family: "McGillSerif-Medium", Georgia, "Times New Roman", Times, serif;
-  color: #03a9f4;
-}
-
+/*
+ * McGill fonts with appropriate font-stacks.
+ */
+/*
+ * Supporting typographic property variables.
+ */
+/*
+* Imported properties have been commented-out
+* A possible bug when using prefixed-variables and @use, which is documented on Stackoverflow.
+* https://stackoverflow.com/questions/60512752/error-when-adding-a-prefix-to-a-variable-from-use-with-forward
+*/
 .h2-sans {
   font-size: 1.5em;
-  font-family: "McgillSans-Regular", Arial, Helvetica, sans-serif;
-  color: #03a9f4;
 }
 
 /*# sourceMappingURL=headers.css.map */

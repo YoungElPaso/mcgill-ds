@@ -1,7 +1,7 @@
 // McGill Design System.
 // fonts.scss
 // This file specifies the custom fonts that are officially provided by the MDS.
-// 
+//
 // Local variables:
 // * asset-path-font
 // * highlight-color
@@ -22,7 +22,7 @@ $asset-path-font: '#{$asset-path}fonts';
 
 // Set highlight color for headers.
 // Load the palette from config & load the color from the theme and the palette.
-$highlight-color: getPaletteColor(config.get(palette), config.get(default-palette), 'accent');
+$header-color: getPaletteColor(config.get(palette), config.get(default-palette), 'accent');
 
 // Currently used variants of the Mcgill custom fonts.
 // TODO: modules should not directly write CSS! The following font-face declarations should be in a component that *should* be loaded with any component that requires these fonts. Or, conversely, this is fine and every component that depends on these font face should also include them? Problem is that CSS doesn't have a dependency mechanism - although that's also a strength. Also to NB: Parcel and other bundlers *will* de-dupe!
@@ -35,7 +35,7 @@ $highlight-color: getPaletteColor(config.get(palette), config.get(default-palett
   font-weight: normal;
   font-style: normal;
 }
- 
+
 @font-face {
   font-family: 'McGillSans-Medium';
   src: url('#{$asset-path-font}/McGillSans-Medium.eot');
@@ -57,13 +57,13 @@ $highlight-color: getPaletteColor(config.get(palette), config.get(default-palett
 }
 
 @font-face {
-font-family: 'McGillSerif-Regular';
-src: url('#{$asset-path-font}/McGillSerif-Regular.eot');
-src: url('#{$asset-path-font}/McGillSerif-Regular.eot?#iefix') format('embedded-opentype'),
-url('#{$asset-path-font}/McGillSerif-Regular.woff') format('woff'),
-url('#{$asset-path-font}/McGillSerif-Regular.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
+  font-family: 'McGillSerif-Regular';
+  src: url('#{$asset-path-font}/McGillSerif-Regular.eot');
+  src: url('#{$asset-path-font}/McGillSerif-Regular.eot?#iefix') format('embedded-opentype'),
+  url('#{$asset-path-font}/McGillSerif-Regular.woff') format('woff'),
+  url('#{$asset-path-font}/McGillSerif-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
@@ -87,11 +87,11 @@ font-style: normal;
   font-style: normal;
 }
 
-// Variable to hold standard serif fonts.
-$standard-serif: Georgia, 'Times New Roman', Times, serif;
+// Variable to hold standard serif fonts, to be used in a font-stack.
+$standard-serif: "MinionPro-Medium", "Minion Pro Medium", "Minion Pro", Century, Georgia, serif;
 
-// Variable to hold standard serif fonts.
-$standard-sans-serif: Arial, Helvetica, sans-serif;
+// Variable to hold standard serif fonts, to be used in a font-stack.
+$standard-sans-serif: "Helvetica Neue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Variable to hold McGill serif fonts.
 $mcgill-standard-serif: 'McGillSerif-Regular';
@@ -99,23 +99,44 @@ $mcgill-standard-serif: 'McGillSerif-Regular';
 // Variable to hold McGill medium serif fonts.
 $mcgill-medium-serif: 'McGillSerif-Medium';
 
+// Variable to hold McGill medium sans fonts.
+$mcgill-medium-sans: 'McGillSans-Medium';
+
 // Variable to hold McGill sans-serif fonts.
 $mcgill-standard-sans-serif: 'McgillSans-Regular';
 
-// A mixin to provide serif fonts.
-@mixin serif {
-  font-family: $mcgill-standard-serif, $standard-serif;
-  color: $highlight-color;
-}
+// McGill serif in italics .
+$mcgill-serif-italic: 'McGillSerif-Italic';
 
-// A mixin to provide sans-serif fonts.
-@mixin sans-serif {
-  font-family: $mcgill-standard-sans-serif, $standard-sans-serif;
-  color: $highlight-color;
-}
+// McGill sans-serif in italics.
+$mcgill-sans-italic: 'McGillSans-Italic';
 
-// A mixin to provide medium serif fonts.
-@mixin medium-serif {
-  font-family: $mcgill-medium-serif, $standard-serif;
-  color: $highlight-color;
+/*
+ * McGill fonts with appropriate font-stacks.
+ */
+
+// Medium sans-serif.
+$mcgill-medium-sans: $mcgill-medium-sans, $standard-sans-serif;
+
+// Medium serif.
+$mcgill-medium-serif : $mcgill-medium-serif, $standard-serif;
+$mcgill-medium-serif : $mcgill-medium-serif, $standard-serif;
+
+// Regular sans-serif.
+$mcgill-regular-sans: $mcgill-standard-sans-serif, $standard-sans-serif;
+
+// Regular serif.
+$mcgill-regular-serif: $mcgill-standard-serif, $standard-serif;
+
+/*
+ * Supporting typographic property variables.
+ */
+
+// A nice line-height specifically for headers.
+$heading-line-height: 1.3;
+
+// Dynamic margins for headers.
+@mixin margin-spacing-headers {
+  margin: calc(2rem -  0.14285714em ) 0em 1rem;
+  line-height: $heading-line-height;
 }

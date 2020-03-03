@@ -1,6 +1,12 @@
 // Use all of the MDS modules as 'mds'.
 @use '../modules/all-modules' as mds;
 
+/*
+* Imported properties have been commented-out
+* A possible bug when using prefixed-variables and @use, which is documented on Stackoverflow.
+* https://stackoverflow.com/questions/60512752/error-when-adding-a-prefix-to-a-variable-from-use-with-forward
+*/
+
 // Basic headers tags.
 h1,
 h2,
@@ -9,18 +15,17 @@ h4,
 h5,
 h6 {
   // All use serif font.
-  @include mds.fonts-serif;
+  // @include mds.fonts-serif;
 }
 
 h1 {
   // H1 uses medium serif font.
-  @include mds.fonts-medium-serif;
+  //@include mds.fonts-medium-serif;
 }
 
 // For demo purposes.
 .h2-sans {
   font-size: 1.5em;
   // All use serif font.
-  @include mds.fonts-sans-serif;
+  //@include mds.fonts-sans-serif;
 }
-
