@@ -5,6 +5,7 @@
   "main": "src/mds.scss",
   "scripts": {
     "dev": "npm run docs",
+    "sass": "echo \"watching for changes\" npm run css && sass --load-path=src/sass --watch src/sass:dist/css",
     "build": "npm run build:copy-assets && npm run build:css",
     "build:copy-assets": "cp -r ./src/sass/assets/* dist/assets",
     "build:css": "npm run build:main-css && npm run build:css-components",
@@ -17,8 +18,8 @@
     "deploy": "echo \"No deploy yet!\" && exit 1",
     "demo": "parcel .examples/parcel-static-site/index.html --out-dir ./tmp/demo-build --no-cache --log-level 4"
   },
-   "publishConfig": {
-    "@wsg:registry":"https://gitlab.ncs.mcgill.ca/api/v4/projects/811/packages/npm/"
+  "publishConfig": {
+    "@wsg:registry": "https://gitlab.ncs.mcgill.ca/api/v4/projects/811/packages/npm/"
   },
   "keywords": [
     "CSS",
