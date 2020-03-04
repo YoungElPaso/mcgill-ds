@@ -24,7 +24,7 @@ $overrides: () !default; // TODO: need to document how to supply overrides.
 }
 
 // Merge default settings and custom settings, overriding default with custom where new settings exist.
-// TODO: should have 'required' settings as well that are cannot be overriden.
+// TODO: should have 'required' settings as well that are cannot be overridden.
 $merged-settings: map-merge($defaults, $customs);
 
 // A function to access default settings map.
@@ -32,7 +32,7 @@ $merged-settings: map-merge($defaults, $customs);
   @return map-get($defaults, $key);
 }
 
-// A functin to access custom settings map.
+// A function to access custom settings map.
 @function custom($key) {
   @return map-get($customs, $key);
 }

@@ -1,0 +1,17 @@
+/* Variables for assigning spacing */
+
+// Load the default configuration.
+@use '../configuration/default' as space;
+
+// Line heights.
+$heading-line-height: 1.3;
+
+// Unit of measure for spacing.
+$em-space: space.$unit-em;
+
+// Padding options.
+$padding-quarter: $em-space; // .25em
+$padding-half: $em-space * 2; // .5em
+$padding-third: $em-space * 3; // .75em
+$padding-standard: $em-space * 4; // 1em
+$padding-double: $em-space * 8; // 2em
