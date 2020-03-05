@@ -7,6 +7,7 @@ import Logo from '../src/js/Logo.svelte';
 export default { title: 'Logo' }
 
 export const LargeLogo = () => ({
+  "use strict";
   Component: Logo,
   props: {
     // pageHeadLine: 'This is a headline!',
