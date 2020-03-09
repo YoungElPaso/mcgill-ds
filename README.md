@@ -12,7 +12,7 @@
 A set of components and styles and other resources for the web that adhere to the digital standards of McGill University.
 
 
-This package includes compiled CSS for direct use, the source Sass files for development as well as other assets like offical fonts and logos.
+This package includes compiled CSS for direct use, the source Sass files for development as well as other assets i.e., offical fonts and logos.
 
  <!-- 1. Clone, then run: `npm install`.
  1. To develop this package with Storybook and to see the documentation: `npm run dev`.
@@ -29,7 +29,7 @@ This package includes compiled CSS for direct use, the source Sass files for dev
  <!-- * deploy (build source and distribute to a remote server for hosting) -->
 
 ## Docs (WIP)
-The supporting documenation for this project can be found at: https://www.mcgill.ca/???
+The supporting documenation for this project can be found at: https://www.mcgill.ca/{???}
 ### Storybook
 Storybook [link] can be run locally as well, allowing you to see all of the documented components in one place (useful if you want to work on them!), offering you the chance to see each one in isolation.
 ### Project site
@@ -46,9 +46,10 @@ The project site can also be run locally, and is another place to see the code c
     * Static HTML site (Parcel) [see `.examples/parcel-static-site/index.html` in this repository]
     * Svelte JS or other modern UI framework (React, Vue etc)
     * Drupal 7 themes
+    - [ ] TODO This needs clarification, doesn't inform "using package with a bundler".
   * ### Including With Traditional HTML & CSS
     * Static HTML site
-      * Including all of the styles distributed by this package in your site can be done easily by inclduding one file: `/dist/css/all/mds.css`
+      * Including all of the styles distributed by this package in your site can be done easily by including one file: `/dist/css/all/mds.css`
       * This will make all of the typographic styles, components, colors, icons, background images etc and corresponding DOM classes available to be used with your markup.
       * To include only the styles you want, component by component, look instead to: `/dist/css/components/*.css` and include whichever components you want one at a time.
     * CDN
