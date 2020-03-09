@@ -1,5 +1,12 @@
 <img src="./src/sass/assets/mcgill-logo-red-reverse-XL-header.svg" width="200">
 
+# Contributing to McGill-ds
+ * Clone mcgill-ds somewhere (not node_modules in /moriarty !)
+ * Use NPM link to symlink mcgill-ds to use in Moriarty and install new dependencies.
+ https://docs.npmjs.com/cli/link
+ 1. Run: `npm link` in mcgill-ds
+ 2. run: `$ npm link path-to-mcgill-ds` and `$ npm install`.
+
 # McGill Design System (mcgill-ds)
 
 A set of components and styles and other resources for the web that adhere to the digital standards of McGill University.
@@ -49,4 +56,3 @@ The project site can also be run locally, and is another place to see the code c
     * Drupal 7 themes
   * ### Creating a Custom CSS Build
     * Using and customizing the provided Sass modules and components in the source code for your own project
-    - [ ] TODO Detail further the custom build

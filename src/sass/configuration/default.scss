@@ -1,12 +1,20 @@
 // Location of assets required for fonts, logos etc.
 $asset-path: '../../assets/' !default;
 // TODO: need a 'no-fonts' option so fonts aren't always bundled. Probably needs to be a build-step too though.
+
+
+// Base units to be used for spacing and sizing.
+$unit: 16px;
+$unit-half: 8px;
+$unit-em: .25em;
+
+// Palettes.
 $default-palette: 'basie';
 $palette: (
   basie: (
     // Default background color.
     background-color: white,
-    
+
     // Default text color.
     text: #212121,
 
@@ -35,7 +43,7 @@ $palette: (
   basie-dark: (
     // Default background color.
     background-color: #333,
-    
+
     // Default text color.
     text: #ECEFF1,
 

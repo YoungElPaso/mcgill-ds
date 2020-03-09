@@ -1,4 +1,4 @@
-// Config module. 
+// Config module.
 // Loads configuration from default source and re-maps some required overrides onto it and forwards that configuration as well as custom variables for use in other modules.
 
 // Load the default configuration.
@@ -17,14 +17,14 @@ $customs: module-variables(custom);
 
 // Last minute overrides. These are assigned by using the module syntax:
 // @use 'foo' with($overrides);
-$overrides: () !default; // TODO: need to document how to supply overides.
+$overrides: () !default; // TODO: need to document how to supply overrides.
 
 @if (variable-exists('overrides')) {
   $customs: map-merge($customs, $overrides);
 }
 
 // Merge default settings and custom settings, overriding default with custom where new settings exist.
-// TODO: should have 'required' settings as well that are cannot be overriden.
+// TODO: should have 'required' settings as well that are cannot be overridden.
 $merged-settings: map-merge($defaults, $customs);
 
 // A function to access default settings map.
@@ -32,7 +32,7 @@ $merged-settings: map-merge($defaults, $customs);
   @return map-get($defaults, $key);
 }
 
-// A functin to access custom settings map.
+// A function to access custom settings map.
 @function custom($key) {
   @return map-get($customs, $key);
 }

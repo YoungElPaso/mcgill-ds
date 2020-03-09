@@ -1,12 +1,20 @@
 // Use all of the MDS modules as 'mds'.
 @use '../modules/all-modules' as mds;
 
-
 .sample-component {
+
+  /*
+   * A possible bug when using prefixed-variables and @use, which is documented on Stackoverflow.
+   * https://stackoverflow.com/questions/60512752/error-when-adding-a-prefix-to-a-variable-from-use-with-forward
+   */
+
   h1 {
     // Fake component header uses sans-serif!
-    @include mds.fonts-sans-serif;
+    //font-family : mds.fonts-$mcgill-medium-serif;
+    //@include mds.fonts-margin-spacing-headers;
+
   }
+
   p {
     // @include mds.fonts-serif;
   }
