@@ -1,5 +1,5 @@
 {
-  "name": "@wsg/mcgill-ds",
+  "name": "@wsg-public/mcgill-ds",
   "version": "1.0.1",
   "description": "McGill Design System - a set of components and styles to adhere to McGill U. standards.",
   "main": "src/mds.scss",
@@ -19,7 +19,7 @@
     "demo": "parcel .examples/parcel-static-site/index.html --out-dir ./tmp/demo-build --no-cache --log-level 4"
   },
   "publishConfig": {
-    "@wsg:registry": "https://gitlab.ncs.mcgill.ca/api/v4/projects/811/packages/npm/"
+    "@wsg-public:registry": "https://gitlab.ncs.mcgill.ca/api/v4/projects/811/packages/npm/"
   },
   "keywords": [
     "CSS",
