@@ -108,7 +108,7 @@ $mcgill-medium-sans: 'McGillSans-Medium';
 // Variable to hold McGill sans-serif fonts.
 $mcgill-standard-sans-serif: 'McgillSans-Regular';
 
-// McGill serif in italics .
+// McGill serif in italics.
 $mcgill-serif-italic: 'McGillSerif-Italic';
 
 // McGill sans-serif in italics.
@@ -117,6 +117,12 @@ $mcgill-sans-italic: 'McGillSans-Italic';
 /*
  * McGill fonts with appropriate font-stacks.
  */
+
+// Serif in italics .
+$mcgill-serif-italic: $mcgill-serif-italic, $standard-serif;
+
+// McGill sans-serif in italics.
+$mcgill-sans-italic: $mcgill-sans-italic, $standard-sans-serif;
 
 // Medium sans-serif.
 $mcgill-medium-sans: $mcgill-medium-sans, $standard-sans-serif;
@@ -134,16 +140,26 @@ $mcgill-regular-serif: $mcgill-standard-serif, $standard-serif;
  * Supporting typographic property variables.
  */
 
-// A nice line-height specifically for headers.
-$heading-line-height: 1.3;
+// Line-heights.
+// Unitless line heights are recommended
+// due to the fact that child elements will inherit the raw number value,
+// rather than the computed value.
+$line-height-tight: 1.1;
+$line-height-base: 1.3;
+$line-height-lg: 1.5;
+$line-height-xl: 2;
+
+// Header variables.
 $header-padding: space.$padding-quarter;
 $header-padding-sm: space.$padding-third;
+
+// Font weights.
 $normal-weight: normal;
 
 // Dynamic margins for headers.
 @mixin header-margin-spacing() {
   margin: calc(2rem -  0.14285714em ) 0em 1rem;
-  line-height: $heading-line-height;
+  line-height: $line-height-base;
 }
 
 @mixin header-padding($x-large: false) {
