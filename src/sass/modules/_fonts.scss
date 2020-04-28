@@ -91,50 +91,50 @@ $asset-path-font: '#{$asset-path}fonts';
 }
 
 // Variable to hold standard serif fonts, to be used in a font-stack.
-$standard-serif: "MinionPro-Medium", "Minion Pro Medium", "Minion Pro", Century, Georgia, serif;
+$serif--fontstack: "MinionPro-Medium", "Minion Pro Medium", "Minion Pro", Century, Georgia, serif;
 
 // Variable to hold standard serif fonts, to be used in a font-stack.
-$standard-sans-serif: "Helvetica Neue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-serif--fontstack: "Helvetica Neue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Variable to hold McGill serif fonts.
-$mcgill-standard-serif: 'McGillSerif-Regular';
+$standard-serif: 'McGillSerif-Regular';
 
 // Variable to hold McGill medium serif fonts.
-$mcgill-medium-serif: 'McGillSerif-Medium';
+$medium-serif: 'McGillSerif-Medium';
 
 // Variable to hold McGill medium sans fonts.
-$mcgill-medium-sans: 'McGillSans-Medium';
+$medium-sans: 'McGillSans-Medium';
 
 // Variable to hold McGill sans-serif fonts.
-$mcgill-standard-sans-serif: 'McgillSans-Regular';
+$standard-sans-serif: 'McgillSans-Regular';
 
 // McGill serif in italics.
-$mcgill-serif-italic: 'McGillSerif-Italic';
+$serif-italic: 'McGillSerif-Italic';
 
 // McGill sans-serif in italics.
-$mcgill-sans-italic: 'McGillSans-Italic';
+$sans-italic: 'McGillSans-Italic';
 
 /*
  * McGill fonts with appropriate font-stacks.
  */
 
 // Serif in italics .
-$mcgill-serif-italic: $mcgill-serif-italic, $standard-serif;
+$mcgill-serif-italic: $serif-italic, $serif--fontstack;
 
 // McGill sans-serif in italics.
-$mcgill-sans-italic: $mcgill-sans-italic, $standard-sans-serif;
+$mcgill-sans-italic: $sans-italic, $sans-serif--fontstack;
 
 // Medium sans-serif.
-$mcgill-medium-sans: $mcgill-medium-sans, $standard-sans-serif;
+$mcgill-medium-sans: $medium-sans, $sans-serif--fontstack;
 
 // Medium serif.
-$mcgill-medium-serif : $mcgill-medium-serif, $standard-serif;
+$mcgill-medium-serif : $medium-serif, $serif--fontstack;
 
 // Regular sans-serif.
-$mcgill-regular-sans: $mcgill-standard-sans-serif, $standard-sans-serif;
+$mcgill-regular-sans: $standard-sans-serif, $sans-serif--fontstack;
 
 // Regular serif.
-$mcgill-regular-serif: $mcgill-standard-serif, $standard-serif;
+$mcgill-regular-serif: $standard-serif, $serif--fontstack;
 
 /*
  * Supporting typographic property variables.
@@ -158,7 +158,7 @@ $normal-weight: normal;
 
 // Dynamic margins for headers.
 @mixin header-margin-spacing() {
-  margin: calc(2rem -  0.14285714em ) 0em 1rem;
+  margin: calc(2rem -  0.14285714em ) 0 1rem;
   line-height: $line-height-base;
 }
 
