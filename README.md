@@ -5,7 +5,7 @@
  * Use NPM link to symlink mcgill-ds to use in Moriarty and install new dependencies.
  https://docs.npmjs.com/cli/link
  1. Run: `npm link` in mcgill-ds
- 2. run: `$ npm link path-to-mcgill-ds` and `$ npm install`.
+ 2. run: `themes/xxxx$ npm link path-to-mcgill-ds` and `$ npm install`.
 
 # McGill Design System (mcgill-ds)
 
