@@ -5,8 +5,11 @@
  * Symlink the scoped mcgill-ds package to be used in Moriarty using [NPM link](https://docs.npmjs.com/cli/link).
 
  1. Run: `npm link` in the mcgill-ds project
- 2. Run: `$ npm link @wsg-public/mcgill-ds` in project using mcgill-ds.
+ 2. Run: `$ npm link @wsg-public/mcgill-ds` in project that uses mcgill-ds.
  3. Run: `$ npm install` to install dependencies.
+
+ Note: If you have errors running npm commands within mcgill-ds
+ `rm -rf node_modules package-lock.json` and run `$ npm install` consider clearing npm cache if needed.
 
 # McGill Design System (mcgill-ds)
 
