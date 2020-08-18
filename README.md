@@ -4,6 +4,17 @@
  * Clone mcgill-ds project somewhere other than node_modules in /moriarty for example themes/.
  * Symlink the scoped mcgill-ds package to be used in Moriarty using [NPM link](https://docs.npmjs.com/cli/link).
 
+### I've found the following method reliable when cloning mcgill-ds in a theme. i.e., moriarty/mcgill-ds
+```
+git clone git@gitlab.ncs.mcgill.ca:wsg-public/mcgill-ds.git && cd mcgill-ds # Clone repo
+rm -rf node_modules package-lock.json # prepare to run npm install if run into errors.
+npm install # install npm packages in mcgill-ds
+cd ~/theme/theme-name  # go into the dir of your main project
+npm install
+npm link mcgill-ds     # link the dir of your dependency: Tip link package as the last step.
+```
+or you can try...
+
  1. Run: `npm link` in the mcgill-ds project
  2. Run: `$ npm link @wsg-public/mcgill-ds` in project that uses mcgill-ds.
  3. Run: `$ npm install` to install dependencies.
