@@ -1,0 +1,67 @@
+/*
+ * Colors approved and provided by McGill design system.
+ *
+ * Functional color variables to be used for common usecases.
+ * TODO Replace palatte found in default.scss, pallette:themes should not reference projects that use this framework.
+ */
+
+/*
+ * Descriptive variables:
+ */
+
+// Primary - brand color.
+$red: #ED1B2F;
+$red-dark: #9E0918;
+
+// Various colors.
+$black: #000;
+$white: #FFF;
+$yellow-light: #FEFCC2;
+$purple: #482f87;
+$purple-light: #BCADE2;
+
+// Grays.
+$gray-light: #F4F4F4;
+$gray-medium: #979797;
+$gray-dark: #1E1E1E;
+
+// Colors with transparency.
+$white-transparent: rgba(255, 255, 255, 0.8);
+$black-transparent: rgba(0,0,0,0.7);
+
+
+/*
+ * Functional variables:
+ */
+
+// Brand colors.
+$color-brand: $red;
+$color-brand-dark: $red-dark;
+$color-brand-secondary: $black;
+
+// Text colors.
+$color-text-type: $black;
+$color-text-display: $color-brand-secondary;
+$color-text-inverted: $white;
+
+// Link colors.
+$color-link: $black;
+$color-link-inverted: $white;
+$color-link-visited: $purple;
+$color-link-visited-inverted: $purple-light;
+
+// Background colors.
+$color-background-light: $gray-light;
+$color-background: $gray-dark;
+$color-background-dark: $black;
+
+// Border colors.
+$color-border-light: $gray-light;
+$color-border: $gray-medium;
+$color-border-dark: $black;
+
+// Accent.
+$color-accent: $black;
+
+// Highlighted message.
+$color-message: $yellow-light;
