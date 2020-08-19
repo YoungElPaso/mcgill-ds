@@ -1,11 +1,30 @@
 <img src="./src/sass/assets/mcgill-logo-red-reverse-XL-header.svg" width="200">
 
 # Contributing to McGill-ds
- * Clone mcgill-ds somewhere (not node_modules in /moriarty !)
- * Use NPM link to symlink mcgill-ds to use in Moriarty and install new dependencies.
- https://docs.npmjs.com/cli/link
- 1. Run: `npm link` in mcgill-ds
- 2. run: `themes/xxxx$ npm link path-to-mcgill-ds` and `$ npm install`.
+ * Clone mcgill-ds project somewhere other than node_modules in /moriarty for example themes/.
+ * Symlink the scoped mcgill-ds package to be used in Moriarty using [NPM link](https://docs.npmjs.com/cli/link).
+ * Run the dependency in the pipeline by creating a new feature branch of mcgill-ds with your changes.
+   * Link the mcgill-ds feature branch in the projects package.json file using '#' example:
+  ```
+  "@wsg-public/mcgill-ds": "git+https://git@gitlab.ncs.mcgill.ca/wsg-public/mcgill-ds.git#mds-1.1-dev"
+  ```
+### I've found the following method reliable when cloning mcgill-ds in a theme. i.e., moriarty/mcgill-ds
+```
+git clone git@gitlab.ncs.mcgill.ca:wsg-public/mcgill-ds.git && cd mcgill-ds # Clone repo
+rm -rf node_modules package-lock.json # prepare to run npm install if run into errors.
+npm install # install npm packages in mcgill-ds
+cd ~/theme/theme-name  # go into the dir of your main project
+npm install
+npm link mcgill-ds     # link the dir of your dependency: Tip link package as the last step.
+```
+or you can try...
+
+ 1. Run: `npm link` in the mcgill-ds project
+ 2. Run: `$ npm link @wsg-public/mcgill-ds` in project that uses mcgill-ds.
+ 3. Run: `$ npm install` to install dependencies.
+
+ Note: If you have errors running npm commands within mcgill-ds
+ `rm -rf node_modules package-lock.json` and run `$ npm install` consider clearing npm cache if needed.
 
 # McGill Design System (mcgill-ds)
 
@@ -29,7 +48,7 @@ This package includes compiled CSS for direct use, the source Sass files for dev
  <!-- * deploy (build source and distribute to a remote server for hosting) -->
 
 ## Docs (WIP)
-The supporting documenation for this project can be found at: https://www.mcgill.ca/{???}
+The supporting documentation for this project can be found at: https://www.mcgill.ca/{???}
 ### Storybook
 Storybook [link] can be run locally as well, allowing you to see all of the documented components in one place (useful if you want to work on them!), offering you the chance to see each one in isolation.
 ### Project site
