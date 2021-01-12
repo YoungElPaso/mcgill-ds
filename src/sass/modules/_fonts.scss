@@ -50,6 +50,16 @@ $asset-path-font: '#{$asset-path}fonts';
 }
 
 @font-face {
+  font-family: 'McGillSans-Bold';
+  src: url('#{$asset-path-font}/McGillSans-Bold.eot');
+  src: url('#{$asset-path-font}/McGillSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('#{$asset-path-font}/McGillSans-Bold.woff') format('woff'),
+  url('#{$asset-path-font}/McGillSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'McGillSans-Italic';
   src: url('#{$asset-path-font}/McGillSans-Italic.eot');
   src: url('#{$asset-path-font}/McGillSans-Italic.eot?#iefix') format('embedded-opentype'),
@@ -81,6 +91,16 @@ $asset-path-font: '#{$asset-path}fonts';
 }
 
 @font-face {
+  font-family: 'McGillSerif-Bold';
+  src: url('#{$asset-path-font}/McGillSerif-Bold.eot');
+  src: url('#{$asset-path-font}/McGillSerif-Bold.eot?#iefix') format('embedded-opentype'),
+  url('#{$asset-path-font}/McGillSerif-Bold.woff') format('woff'),
+  url('#{$asset-path-font}/McGillSerif-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'McGillSerif-Italic';
   src: url('#{$asset-path-font}/McGillSerif-Italic.eot');
   src: url('#{$asset-path-font}/McGillSerif-Italic.eot?#iefix') format('embedded-opentype'),
@@ -102,8 +122,14 @@ $standard-serif: 'McGillSerif-Regular';
 // Variable to hold McGill medium serif fonts.
 $medium-serif: 'McGillSerif-Medium';
 
+// Variable to hold McGill bold serif fonts.
+$bold-serif: 'McGillSerif-Bold';
+
 // Variable to hold McGill medium sans fonts.
 $medium-sans: 'McGillSans-Medium';
+
+// Variable to hold McGill bold sans fonts.
+$bold-sans: 'McGillSans-Bold';
 
 // Variable to hold McGill sans-serif fonts.
 $standard-sans-serif: 'McgillSans-Regular';
@@ -118,23 +144,37 @@ $sans-italic: 'McGillSans-Italic';
  * McGill fonts with appropriate font-stacks.
  */
 
-// Serif in italics .
-$mcgill-serif-italic: $serif-italic, $serif--fontstack;
 
-// McGill sans-serif in italics.
-$mcgill-sans-italic: $sans-italic, $sans-serif--fontstack;
-
-// Medium sans-serif.
-$mcgill-medium-sans: $medium-sans, $sans-serif--fontstack;
-
-// Medium serif.
-$mcgill-medium-serif : $medium-serif, $serif--fontstack;
+// Sans-serif.
 
 // Regular sans-serif.
 $mcgill-regular-sans: $standard-sans-serif, $sans-serif--fontstack;
 
+// Medium sans-serif.
+$mcgill-medium-sans: $medium-sans, $sans-serif--fontstack;
+
+// Bold sans-serif.
+$mcgill-bold-sans: $bold-sans, $standard-sans-serif;
+
+// Italics sans-serif.
+$mcgill-sans-italic: $sans-italic, $sans-serif--fontstack;
+
+
+// Serif.
+
 // Regular serif.
 $mcgill-regular-serif: $standard-serif, $serif--fontstack;
+
+// Medium serif.
+$mcgill-medium-serif : $medium-serif, $serif--fontstack;
+
+// Bold serif.
+$mcgill-bold-serif : $bold-serif, $standard-serif;
+
+// Italics serif.
+$mcgill-serif-italic: $serif-italic, $serif--fontstack;
+
+
 
 /*
  * Supporting typographic property variables.

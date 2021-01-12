@@ -11,7 +11,7 @@
 ### I've found the following method reliable when cloning mcgill-ds in a theme. i.e., moriarty/mcgill-ds
 ```
 git clone git@gitlab.ncs.mcgill.ca:wsg-public/mcgill-ds.git && cd mcgill-ds # Clone repo
-rm -rf node_modules package-lock.json # prepare to run npm install if run into errors.
+rm -rf package-lock.json # prepare to run npm install if run into errors.
 npm install # install npm packages in mcgill-ds
 cd ~/theme/theme-name  # go into the dir of your main project
 npm install
