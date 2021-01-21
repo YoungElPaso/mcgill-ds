@@ -10,6 +10,7 @@ $unit-em: .25em;
 
 // Palettes.
 $default-palette: 'basie';
+// TODO: Simplify by replacing deep nesting with single level nesting.
 $palette: (
   basie: (
     // Default background color.
