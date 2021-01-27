@@ -14,6 +14,13 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "McGillSans-Bold";
+  src: url("../../assets/fonts/McGillSans-Bold.eot");
+  src: url("../../assets/fonts/McGillSans-Bold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/McGillSans-Bold.woff") format("woff"), url("../../assets/fonts/McGillSans-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "McGillSans-Italic";
   src: url("../../assets/fonts/McGillSans-Italic.eot");
   src: url("../../assets/fonts/McGillSans-Italic.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/McGillSans-Italic.woff") format("woff"), url("../../assets/fonts/McGillSans-Italic.ttf") format("truetype");
@@ -35,6 +42,13 @@
   font-style: normal;
 }
 @font-face {
+  font-family: "McGillSerif-Bold";
+  src: url("../../assets/fonts/McGillSerif-Bold.eot");
+  src: url("../../assets/fonts/McGillSerif-Bold.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/McGillSerif-Bold.woff") format("woff"), url("../../assets/fonts/McGillSerif-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "McGillSerif-Italic";
   src: url("../../assets/fonts/McGillSerif-Italic.eot");
   src: url("../../assets/fonts/McGillSerif-Italic.eot?#iefix") format("embedded-opentype"), url("../../assets/fonts/McGillSerif-Italic.woff") format("woff"), url("../../assets/fonts/McGillSerif-Italic.ttf") format("truetype");
@@ -46,6 +60,18 @@
  */
 /*
  * Supporting typographic property variables.
+ */
+/*
+ * Colors approved and provided by McGill design system.
+ *
+ * Functional color variables to be used for common usecases.
+ * TODO Replace palatte found in default.scss, pallette:themes should not reference projects that use this framework.
+ */
+/*
+ * Descriptive variables:
+ */
+/*
+ * Functional variables:
  */
 .sample-component {
   /*
