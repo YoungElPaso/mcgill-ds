@@ -1,60 +1,46 @@
 <img src="./src/sass/assets/mcgill-logo-red-reverse-XL-header.svg" width="200">
 
-# Contributing to McGill-ds
- * Clone mcgill-ds project somewhere other than node_modules in /moriarty for example themes/.
- * Symlink the scoped mcgill-ds package to be used in Moriarty using [NPM link](https://docs.npmjs.com/cli/link).
- * Run the dependency in the pipeline by creating a new feature branch of mcgill-ds with your changes.
-   * Link the mcgill-ds feature branch in the projects package.json file using '#' example:
-  ```
-  "@wsg-public/mcgill-ds": "git+https://git@gitlab.ncs.mcgill.ca/wsg-public/mcgill-ds.git#mds-1.1-dev"
-  ```
-### I've found the following method reliable when cloning mcgill-ds in a theme. i.e., moriarty/mcgill-ds
-```
-git clone git@gitlab.ncs.mcgill.ca:wsg-public/mcgill-ds.git && cd mcgill-ds # Clone repo
-rm -rf node_modules package-lock.json # prepare to run npm install if run into errors.
-npm install # install npm packages in mcgill-ds
-cd ~/theme/theme-name  # go into the dir of your main project
-npm install
-npm link mcgill-ds     # link the dir of your dependency: Tip link package as the last step.
-```
-or you can try...
-
- 1. Run: `npm link` in the mcgill-ds project
- 2. Run: `$ npm link @wsg-public/mcgill-ds` in project that uses mcgill-ds.
- 3. Run: `$ npm install` to install dependencies.
-
- Note: If you have errors running npm commands within mcgill-ds
- `rm -rf node_modules package-lock.json` and run `$ npm install` consider clearing npm cache if needed.
-
 # McGill Design System (mcgill-ds)
 
 A set of components and styles and other resources for the web that adhere to the digital standards of McGill University.
 
+This package includes compiled CSS for direct use, the source files for development as well as other assets such as offical fonts and logos.
 
-This package includes compiled CSS for direct use, the source Sass files for development as well as other assets i.e., offical fonts and logos.
+## Usage for developers:
+ * Add `'@wsg-public/mcgill-ds': 'xxx'` (where xxx is your desired version) to your projects package.json file.
+ * Run `npm install`.
+ * Use the code in ./src or ./dist in your own project, however you see fit.
 
- <!-- 1. Clone, then run: `npm install`.
- 1. To develop this package with Storybook and to see the documentation: `npm run dev`.
- 1. To build the source and assets for distribution: `npm run build`.
- 1. To launch a demo that uses Parcel bundler: `npm run demo`. Go to `http://localhost:1234` -->
+## Basic usage of distributed code:
+ * To just use the distributed code:
+  * Use git to clone this repository, wherever you need it.
+  * Copy or link to the compiled CSS/JS or other resources found in ./dist/
+
+## Contributing to mcgill-ds or using a development version:
+ * Clone this repository.
+ * Symlink the mcgill-ds package using [NPM link](https://docs.npmjs.com/cli/link).
+ * Create a new branch of mcgill-ds so you can make your changes.
+ * Push your changes and open a Merge Request to Master when you're ready. 
+ * To use your development branch in a project, even before it's merged: 
+   * Push your code back to this repository.
+   * Add the the mcgill-ds feature branch as an NPM dependency in the projects package.json file, E.g.
+  ```
+  "@wsg-public/mcgill-ds": "git+https://git@gitlab.ncs.mcgill.ca/wsg-public/mcgill-ds.git#mds-1.1-dev"
+  ```
 
 
  ## Scripts
  The following commands can be run with the prefix: `npm run `
- * **`dev`** - run a Storybook development server (https://localhost:3001) to work on this package and simultaneously run the included MDS project site (http://localhost:1234)
+ * **`storybook`** - run a Storybook development server (https://localhost:3001) to work on this package and view existing documentation.
  * **`build`** - build source and assets to distribute, outputs compiled CSS and JS to `./dist`
  <!-- * test (run tests) -->
- * **`demo`** - launch a demo that uses Parcel bundler to dogfood and bundle this code.
- <!-- * deploy (build source and distribute to a remote server for hosting) -->
-
-## Docs (WIP)
-The supporting documentation for this project can be found at: https://www.mcgill.ca/{???}
+ 
+<!-- ## Docs (WIP) -->
+<!-- The supporting documentation for this project can be found at: https://www.mcgill.ca/{???} -->
 ### Storybook
 Storybook [link] can be run locally as well, allowing you to see all of the documented components in one place (useful if you want to work on them!), offering you the chance to see each one in isolation.
-### Project site
-The project site can also be run locally, and is another place to see the code created here in action.
 
- ## Usage Guides (WIP)
+<!-- ## Usage Guides (WIP)
   * ### Structure of the mcgill-ds Source Code
     * Sass - The Sass files in `/src/sass/` are broken down into the following structure:
       * Config - important base settings for setting variables used throughout the styles of this project (color palettes, some utility Sass functions etc)
@@ -74,4 +60,4 @@ The project site can also be run locally, and is another place to see the code c
     * CDN
     * Drupal 7 themes
   * ### Creating a Custom CSS Build
-    * Using and customizing the provided Sass modules and components in the source code for your own project
+    * Using and customizing the provided Sass modules and components in the source code for your own project -->
