@@ -11,7 +11,7 @@
     "build:main-css": "sass --load-path=src/sass src/sass/mds.scss:dist/css/all/mds.css",
     "build:css-components": "sass --load-path=src/sass src/sass/components:dist/css/components",
     "test": "npm run unit-tests",
-    "storybook": "start-storybook --ci --port=3001",
+    "storybook": "start-storybook --ci --port=3001 -s src/assets/",
     "unit-tests": "jest --no-cache",
     "build-storybook": "build-storybook",
     "build-postcss": "cross-env-shell NODE_ENV=production \"cat src/css/mds-tw-base.css src/css/mds-shared.css | postcss -o dist/css/mds-shared.css\""
