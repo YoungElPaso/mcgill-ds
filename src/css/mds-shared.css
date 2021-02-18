@@ -1,0 +1,123 @@
+/* MDS font-face definitions. */
+
+/* Sans-regular. */
+@font-face {
+  font-family: "McGillSans-Regular";
+  src: url("../assets/fonts/McGillSans-Regular.woff2") format("woff2"),
+    url("../assets/fonts/McGillSans-Regular.woff") format("woff"),
+    url("../assets/fonts/McGillSans-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Sans-medium. */
+@font-face {
+  font-family: "McGillSans-Medium";
+  src: url("../assets/fonts/McGillSans-Medium.woff2") format("woff2"),
+    url("../assets/fonts/McGillSans-Medium.woff") format("woff"),
+    url("../assets/fonts/McGillSans-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Serif-medium. */
+@font-face {
+  font-family: "McGillSerif-Medium";
+  src: url("../assets/fonts/McGillSerif-Medium.woff2") format("woff2"),
+    url("../assets/fonts/McGillSerif-Medium.woff") format("woff"),
+    url("../assets/fonts/McGillSerif-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Anything added to a TW layer can be purged if not used.
+ So can be used with internal templates only. 
+ Use @apply to share it out of layer to preserve it for consumer use.
+*/
+@layer components {
+  /* Styles .mds-button since styling tags other than button 
+  is sometimes desired. */
+  .mds-button {
+    /* Apply to use TW utilities to generate tradtional 'BEM' - like CSS. */
+    @apply flex
+      items-center
+      rounded
+      bg-black
+      dark:bg-white 
+      text-white
+      dark:text-black
+      border-black 
+      border-2 
+      p-2
+      px-4
+      m-3
+      hover:bg-transparent
+      hover:text-black
+      dark:hover:text-white
+      dark:hover:border-white
+      dark:hover:bg-transparent
+      transition-colors
+      font-medium
+      font-mds-sans-medium
+      text-base
+      duration-300;
+  }
+
+  /* Ionicons in mds-button. */
+  .mds-button__ionicon {
+    @apply mr-1 text-base;
+  }
+
+  /* Large text and icon modifier. */
+  .mds-button--large,
+  .mds-button--large .mds-button__ionicon {
+    @apply text-3xl;
+  }
+
+  /* Secondary, aka Outline modifier. */
+  .mds-button--secondary {
+    @apply bg-transparent 
+    text-black 
+    hover:bg-black
+    hover:text-white
+    dark:text-white
+    dark:border-white
+    dark:bg-transparent
+    dark:hover:bg-white
+    dark:hover:text-black;
+  }
+
+  /* Branded, aka red modifier. */
+  .mds-button--branded {
+    @apply bg-red
+    border-red
+    hover:text-red
+    dark:bg-red
+    dark:text-white
+    dark:hover:border-red
+    dark:hover:text-red;
+  }
+
+  /* Secondary with Branded. */
+  .mds-button--secondary.mds-button--branded {
+    @apply bg-transparent
+    border-red
+    text-red
+    hover:text-white
+    hover:bg-red
+    dark:bg-transparent
+    dark:text-red
+    dark:hover:border-red
+    dark:hover:text-white
+    dark:hover:bg-red;
+  }
+
+  /* Square-ish ratio modifier. */
+  .mds-button--square {
+    @apply p-3;
+  }
+}
+
+/* NB: Anything outside a `@layer{}`, will not be purged by default.
+  This is useful for including CSS that will be needed regardless of templates.
+  An example might be some custom class that Tailwind doesn't define but might
+  be useful in the design system. Perhaps things that might get applied to the
+  <body> or debugging classes.
+*/
