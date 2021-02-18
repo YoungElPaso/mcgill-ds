@@ -24,7 +24,8 @@ module.exports = {
       // Required to load SVG and other images and files.
       {
         test: /\.(png|svg|jpg|gif|woff)$/,
-        use: ["file-loader"]
+        use: ["file-loader"],
+        include: path.resolve(__dirname, "../")
       },
       // Adds support for loading Twig templates.
       {
