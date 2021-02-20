@@ -10,6 +10,8 @@ module.exports = {
     tailwindcss: twConfig || null,
 
     // Use autoprefixer with default config.
+    // Also ensure this runs only on prod build? 
+    // Probably only need to test on evergreen browsers until prod anyway.
     autoprefixer: {} || null,
 
     // Use cssnano (miniferi) with cssnano-preset-default package.
