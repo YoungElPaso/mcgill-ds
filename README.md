@@ -41,6 +41,9 @@ This package includes compiled CSS for direct use, the source files for developm
 ### Storybook
 Storybook https://storybook.js.org can be run locally as well, allowing you to see all of the documented components in one place (useful if you want to work on them!), offering you the chance to see each one in isolation.
 
+### List of Components
+#### Button
+
 <!-- ## Usage Guides (WIP)
   * ### Structure of the mcgill-ds Source Code
     * Sass - The Sass files in `/src/sass/` are broken down into the following structure:
