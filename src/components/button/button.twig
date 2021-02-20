@@ -1,0 +1,23 @@
+{# 
+Template for a button, has 4 properties:
+ - _defaultClass: private, required, sets the foundational presentation.
+ - modifiers: classes used to modify and provide variants.
+ - icon: an Ionicon icon to render right before the label.
+ - label: required, the main text of the button.
+#}
+
+{# Provide the defaultClass value. #}
+{%
+  set _defaultClass = [
+    'mds-button',
+  ]
+%}
+
+<button data-testid="mds-button" class="{{_defaultClass}} {{modifiers}}">
+  {% if icon %}
+    <ion-icon class="mds-button__ionicon" data-testid="ionicon" name="{{icon}}"></ion-icon>
+  {% endif %}
+  {% if label %}
+    {{ label | escape }}
+  {% endif %}
+</button>
