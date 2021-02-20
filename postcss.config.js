@@ -14,6 +14,7 @@ module.exports = {
 
     // Use cssnano (miniferi) with cssnano-preset-default package.
     // TODO: this should only happen on NODE_ENV = PRODUCTION.
+    // process.env.NODE_ENV === "production"
     cssnano: {
       preset: [require("cssnano-preset-default")]
     }
