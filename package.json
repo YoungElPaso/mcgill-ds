@@ -1,7 +1,7 @@
 {
-  "name": "@wsg-public/mcgill-ds",
+  "name": "unofficial-mds-v110",
   "version": "1.1.0",
-  "description": "McGill Design System - a set of components and styles to adhere to McGill University standards.",
+  "description": "Unofficial and experimental version MDS.",
   "main": "src/mds.scss",
   "scripts": {
     "sass": "echo \"watching for changes\" npm run css && sass --load-path=src/sass --watch src/sass:dist/css",
@@ -11,7 +11,7 @@
     "build:main-css": "sass --load-path=src/sass src/sass/mds.scss:dist/css/all/mds.css",
     "build:css-components": "sass --load-path=src/sass src/sass/components:dist/css/components",
     "test": "npm run unit-tests",
-    "storybook": "start-storybook --ci --port=3001 -s src/assets/",
+    "start": "start-storybook --ci --port=3001 -s src/assets/",
     "unit-tests": "jest --no-cache",
     "build-storybook": "build-storybook",
     "build-postcss": "cross-env-shell NODE_ENV=production \"cat src/css/mds-tw-base.css src/css/mds-shared.css | postcss -o dist/css/mds-shared.css\""
@@ -19,12 +19,7 @@
   "publishConfig": {
     "@wsg-public:registry": "https://gitlab.ncs.mcgill.ca/api/v4/projects/811/packages/npm/"
   },
-  "keywords": [
-    "CSS",
-    "library",
-    "framework",
-    "components"
-  ],
+  "keywords": [],
   "author": "Jesse Sutherland",
   "license": "ISC",
   "peerDependencies": {
