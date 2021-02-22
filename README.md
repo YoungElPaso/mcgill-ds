@@ -1,5 +1,3 @@
-<img src="./src/sass/assets/mcgill-logo-red-reverse-XL-header.svg" width="200">
-
 # McGill Design System (mcgill-ds)
 
 ## This is an unofficial fork with more features and components.
