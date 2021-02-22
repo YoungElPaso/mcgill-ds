@@ -8,6 +8,12 @@ A set of components and styles and other resources for the web that adhere to th
 
 This package includes compiled CSS for direct use, the source files for development as well as other assets such as offical fonts and logos.
 
+---
+
+[![Run Tests - `npm test`](https://github.com/YoungElPaso/mcgill-ds/actions/workflows/npm-test.yml/badge.svg)](https://github.com/YoungElPaso/mcgill-ds/actions/workflows/npm-test.yml) [![Build Static Storybook](https://github.com/YoungElPaso/mcgill-ds/actions/workflows/build-static-storybook.yml/badge.svg?branch=master)](https://github.com/YoungElPaso/mcgill-ds/actions/workflows/build-static-storybook.yml)
+
+---
+
 ## Usage for developers:
 
 - Add `'@wsg-public/mcgill-ds': 'xxx'` (where xxx is your desired version) to your projects package.json file.
