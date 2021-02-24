@@ -1,0 +1,88 @@
+{# 
+WIP Template for Footer.
+ - Contains smaller components to create an attractive Footer.
+ TODO: need to use the include tag, not function, not implemented in TWIG.js.
+#}
+
+{# Provide the defaultClass value. #}
+{%
+  set _defaultClass = [
+    'mds-footer',
+  ]
+%}
+
+
+{% set footerContent %}
+  {% include '../box/box.twig' with {content:"Lorem ipsum"} %}
+{% endset %}
+
+
+
+
+{# 
+ TODO: footer probably should have optional logo.
+ Logo should be part of its props.
+ Props should include: logo, and children.
+#}
+{# TODO: later, resume styling Footer as per doc in JIRA! #}
+
+{# TODO: specifically, later *commit*! and then resume Footer child flex styling on mobile etc,
+  then review w/ H and then port to WMS. #}
+<footer class="{{_defaultClass}} md:flex justify-center items-center p-4 px-8 bg-black text-white ">
+  
+  {% include './footer-logo.twig' with {"modifiers":"mr-8"} %}
+  
+  {# Uses the block strategy of componentization! #}
+  {% embed '../box/box.twig' %}
+    {% block content %}
+      <small class="text-gray"> {{'Copyright &copy; 2021 McGill University. All rights reserved.' | t }}</small>
+    {% endblock %}
+  {% endembed %}
+
+  {% embed '../box/box.twig' %}
+    {% block content %}
+      <a href="#">Accessibility</a>
+    {% endblock %}
+  {% endembed %}
+
+  {% embed '../box/box.twig' %}
+    {% block content %}
+      <a href="#">Privacy notice</a>
+    {% endblock %}
+  {% endembed %}
+
+  {% embed '../box/box.twig' %}
+    {% block content %}
+      <a href="#">Contact us</a>
+    {% endblock %}
+  {% endembed %}
+
+</footer>
+
+{# 3 WIPS Tues. later aft.: 
+  1) Trying to improve Twig editing experience, because it sucks.
+  Can't really tho - not without better VS Code extensions and Twig does NOT support
+  HTML file extension which is a bit dumb.
+  2) Brainwave: all components should be fluid by default - mobile friendly too:
+   - containers (not in scope for us, for consumer) should set widthds ideally.
+   - somethings we must set internally possibly - for that we'll use width utilities.
+  3) To setup width utilities we'll: 
+    A) use @apply, or, 
+    B) and possibly better: have a component entirely devoted to width utilities,
+    a *documentation* component that whitelists *some* TW utilities to protect from
+    PurgeCSS. Whatever we don't use/document doesn't make the cut!
+    C) only issue here is that some utilities get through becuase they're internal a given
+    component and not documented but that's ok, cause then by definition they're internal
+    and as internal require no docs!
+  4) The inspiration for that idea was that I'm changing the process to be more simple:
+   * Just include the MDS CSS and you should be good, that's all we should do in WMS
+   too, no need to 'build' it or use source -thats a huge pain point with little upside
+   * and since that's the case, can use that CSS and demo it in say CodePen
+   * and since I should do that, I can't/shouldn't control the context of the use of these 
+   components, and so should make them fluid and allow the width responsibility to fall on the
+   container context as much as possible. I think that DS react guy on Twitter was alluding to that
+   when he spoke of not defining widths for components, leaving that responsibility to
+   container components surrounding them.
+   * Was thinking of the footer primarily - as a component all it should offer is a block
+   level <footer> tag with some contents that could fit any area (tho should go at bottom obvi).
+#}

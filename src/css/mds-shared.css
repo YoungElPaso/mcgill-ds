@@ -113,6 +113,20 @@
   .mds-button--square {
     @apply p-3;
   }
+
+  /* WIP: Footer Stuff */
+
+  /* Box. TODO: use @import and put this (and button CSS) into own files. */
+  .mds-box {
+    /* @apply p-3
+    m-3
+    text-white; */
+  }
+
+  .mds-footer {
+    /* @apply flex
+    bg-black; */
+  }
 }
 
 /* NB: Anything outside a `@layer{}`, will not be purged by default.
