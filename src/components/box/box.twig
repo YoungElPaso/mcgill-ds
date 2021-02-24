@@ -1,0 +1,26 @@
+{# 
+Template for a generic 'box', has 2 properties:
+ - _defaultClass: private, string, required, sets the foundation of styling.
+ - modifiers: string, classes used to modify and provide basic variants.
+ - content: string, content of the box.
+#}
+
+{# Provide the defaultClass value. #}
+{%
+  set _defaultClass = [
+    'mds-box',
+  ]
+%}
+
+{# Provide content fallback via the 'include with strategy.' #}
+{% if content is empty %}
+  {% set content = "Sample" %}
+{% endif %}
+
+
+<div data-testid="mds-box" class="{{_defaultClass}} {{modifiers}} m-3 p-3">
+  {# block 'content' allows users of this component to fully replace the contents. #}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</div>

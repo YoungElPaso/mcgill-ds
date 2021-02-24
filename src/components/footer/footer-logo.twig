@@ -1,0 +1,17 @@
+{# Footer-Logo
+  - Properties:
+    - assetPath,
+    - footerImage, 
+    - modifiers.
+#}
+
+{# Provide assetPath fallback to a flat dir structure. #}
+{% if assetPath is empty %}
+  {% set assetPath = "/" %}
+{% endif %}
+
+{# Provide McGill Logo as the default.#}
+{% if footerImage is empty %}
+  {% set footerImage = "mcgill-logo.svg" %}
+{% endif %}
+<img src="{{assetPath}}{{footerImage}}" width="160" class="{{modifiers}}"/>
