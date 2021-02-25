@@ -18,10 +18,12 @@ export default {
     // To disable docs page content:
     // docs: { page: null }
     backgrounds: {
+      default: "dark",
       grid: {
-        cellSize: 4,
+        // TW uses a 4pt base, but we just want 8pt resolution to the grid!
+        cellSize: 8,
         opacity: 0.5,
-        cellAmount: 4,
+        cellAmount: 1,
         offsetX: 16, // default is 0 if story has 'fullscreen' layout, 16 if layout is 'padded'
         offsetY: 16 // default is 0 if story has 'fullscreen' layout, 16 if layout is 'padded'
       }
@@ -63,6 +65,7 @@ export const DefaultFooter = Template.bind({});
 DefaultFooter.args = {
   label: "Default Footer"
 };
+// TODO: this style is deprecated, check the SB docs and change it.
 DefaultFooter.story = {
   parameters: {
     controls: { disable: true },

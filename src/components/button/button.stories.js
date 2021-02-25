@@ -75,9 +75,12 @@ const DarkTemplate = ({ ...args }) => {
   // You can either use a function to create DOM elements or use a plain html string!
   // return `<div>${label}</div>`;
   return `
+  <!-- the following div is for illustrating the 'dark' theme only! -->
   <div class="dark" style="padding: 2em; background: #333;">
     <p style="color: white"> A dark context to illustrate themeing.</p>
+    <!-- Start of Button component, copy this: -->
     ${button({ ...args })}
+    <!-- End of Button component. -->
   </div>`;
 };
 

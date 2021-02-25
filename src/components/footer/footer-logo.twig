@@ -7,6 +7,7 @@
 
 {# Provide assetPath fallback to a flat dir structure. #}
 {% if assetPath is empty %}
+<!-- TODO: this asset path is wrong; doesn't work on prod-build - fix it so it works on both! -->
   {% set assetPath = "/" %}
 {% endif %}
 
@@ -14,4 +15,4 @@
 {% if footerImage is empty %}
   {% set footerImage = "mcgill-logo.svg" %}
 {% endif %}
-<img src="{{assetPath}}{{footerImage}}" width="160" class="{{modifiers}}"/>
+<img src="{{assetPath}}{{footerImage}}" width="144" class="{{modifiers}}"/>
