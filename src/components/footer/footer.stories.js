@@ -48,17 +48,7 @@ const Template = ({ ...args }) => {
 };
 
 // TODO: evaluate do we need a DarkTemplate for footer? Doubt it...
-// Function to render the template with an artificial contrasty background.
-// Uses the '.dark' theme class to toggle.
-// const DarkTemplate = ({ ...args }) => {
-//   // You can either use a function to create DOM elements or use a plain html string!
-//   // return `<div>${label}</div>`;
-//   return `
-//   <div class="dark" style="padding: 2em; background: #333;">
-//     <p style="color: white"> A dark context to illustrate themeing.</p>
-//     ${footer({ ...args })}
-//   </div>`;
-// };
+// Replace with Theme Add-on.
 
 // Default Footer.
 export const DefaultFooter = Template.bind({});
@@ -72,9 +62,3 @@ DefaultFooter.story = {
     actions: { disable: true }
   }
 };
-
-// Default in dark theme.
-// export const DefaultOnDark = DarkTemplate.bind({});
-// DefaultOnDark.args = {
-//   label: "Default Footer"
-// };
