@@ -22,15 +22,10 @@
   footerChildren (string?).
 #}
 
-{# TODO: 
-   * specifically, later *commit*! 
-   * and then resume Footer child flex styling on mobile etc,
-   * then review w/ H and then port to WMS. #}
-
-<!-- TODO: Crap, think need to use Grid rather than flexbox here... -->
-<footer data-testid="mds-footer" class="{{_defaultClass}} text-center md:flex justify-center items-center p-4 px-8 bg-black text-white ">
+<footer data-testid="mds-footer" class="{{_defaultClass}} text-center md:flex  items-center p-4 px-8 bg-black text-white ">
 {% block footerChildren %}
-  {# Use include strategy for simpler components (no children/slots/embeds). #}
+<div class="md:flex">
+{# Use include strategy for simpler components (no children/slots/embeds). #}
   {% include './footer-logo.twig' with {"modifiers":"inline-block mr-8"} %}
   
   {# Uses the block strategy of componentization! #}
@@ -39,7 +34,8 @@
       <small class="text-gray text-sm"> {{'Copyright &copy; 2021 McGill University. All rights reserved.' | t }}</small>
     {% endblock %}
   {% endembed %}
-
+</div>
+<div class="md:flex flex-grow justify-end">
   {% embed '../box/box.twig' with {"modifiers": "" }%}
     {% block content %}
       <a href="#">Accessibility</a>
@@ -58,25 +54,25 @@
     {% endblock %}
   {% endembed %}
 {% endblock %}
+</div>
 </footer>
 
 <br />
 <!-- Legacy WMS Footer. -->
-<!-- TODO: change this to use Grid so the logo can be left aligned and the links right aligned etc. -->
-<div id="sub-footer-inner" class="text-center md:flex justify-center items-center p-4 px-8 bg-black text-white">
+<div id="sub-footer-inner" class="text-center md:grid grid-cols-3 place-content-center items-center p-4 px-8 bg-black text-white">
   <!-- Logo in the foam. -->
-  <a id="mcgill-watermark" title="return to McGill University" href="https://www.mcgill.ca" class="inline-block">
+  <a id="mcgill-watermark" title="return to McGill University" href="https://www.mcgill.ca" class="inline-block m-3">
     {% include './footer-logo.twig' with {"modifiers": 'mr-8'} %}
     <span id="university-watermark" class="offscreen sr-only">McGill University</span>
   </a>
 
   <!-- Copyright. -->
-  <div id="copyright" class="m-3 p-3 text-gray text-sm">
+  <div id="copyright" class="m-3 p-3 text-gray text-sm ">
     Copyright © 2021 McGill University
   </div>
 
   <!-- Admin Links. -->
-  <div id="admin-links" class="m-3 p-3">
+  <div id="admin-links" class="m-3 p-3 place-self-end">
     <a class="m-3" id="accessibility-link" title="accessibility" href="https://www.mcgill.ca/accessibility">Accessibility</a>
     <a class="m-3" href="/desautels/saml_login?destination=node/65144" title="Site Maintenance">Sign in (site maintenance)</a>
   </div>
