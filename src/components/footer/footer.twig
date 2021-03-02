@@ -19,7 +19,7 @@
  Footer props should include: 
   hasLogo,
     - if hasLogo: LogoComponent (w/ assetPath and logoFile properties, width) 
-  children (string).
+  footerChildren (string?).
 #}
 
 {# TODO: 
@@ -28,9 +28,9 @@
    * then review w/ H and then port to WMS. #}
 
 <!-- TODO: Crap, think need to use Grid rather than flexbox here... -->
-<footer class="{{_defaultClass}} text-center md:flex justify-center items-center p-4 px-8 bg-black text-white ">
-  
-  {# Use include strategy for simpler components (no children). #}
+<footer data-testid="mds-footer" class="{{_defaultClass}} text-center md:flex justify-center items-center p-4 px-8 bg-black text-white ">
+{% block footerChildren %}
+  {# Use include strategy for simpler components (no children/slots/embeds). #}
   {% include './footer-logo.twig' with {"modifiers":"inline-block mr-8"} %}
   
   {# Uses the block strategy of componentization! #}
@@ -57,7 +57,7 @@
       <a href="#">Contact us</a>
     {% endblock %}
   {% endembed %}
-
+{% endblock %}
 </footer>
 
 <br />

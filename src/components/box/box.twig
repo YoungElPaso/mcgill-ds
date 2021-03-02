@@ -6,10 +6,9 @@ Template for a generic 'box', has 2 properties:
 #}
 
 {# Provide the defaultClass value. #}
+{# <!-- TODO: _default class includes utilities until refactored w/ @apply. -->#}
 {%
-  set _defaultClass = [
-    'mds-box',
-  ]
+  set _defaultClass = 'mds-box m-3 p-3'
 %}
 
 {# Provide content fallback via the 'include with strategy.' #}
@@ -18,7 +17,7 @@ Template for a generic 'box', has 2 properties:
 {% endif %}
 
 
-<div data-testid="mds-box" class="{{_defaultClass}} {{modifiers}} m-3 p-3">
+<div data-testid="mds-box" class="{{_defaultClass}} {{modifiers}}">
   {# block 'content' allows users of this component to fully replace the contents. #}
   {% block content %}
     {{ content }}

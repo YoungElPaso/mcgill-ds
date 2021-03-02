@@ -3,10 +3,11 @@
     - assetPath,
     - footerImage, 
     - modifiers.
+  - TODO: should probably have a prop for alt-text.
 #}
 
 {# Provide McGill Logo as the default.#}
 {% if footerImage is empty %}
   {% set footerImage = "mcgill-logo.svg" %}
 {% endif %}
-<img src="{{assetPath}}{{footerImage}}" width="144" class="{{modifiers}}"/>
+<img data-testid="mds-footer-logo" alt="McGill Logo" src="{{assetPath}}{{footerImage}}" width="144" class="{{modifiers}}"/>

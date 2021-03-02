@@ -21,11 +21,13 @@ export default {
       default: "dark",
       grid: {
         // TW uses a 4pt base, but we just want 8pt resolution to the grid!
+        // TODO: generalize this setting for all stories and add grid settings
+        // to a x-library config file.
         cellSize: 8,
         opacity: 0.5,
         cellAmount: 1,
-        offsetX: 16, // default is 0 if story has 'fullscreen' layout, 16 if layout is 'padded'
-        offsetY: 16 // default is 0 if story has 'fullscreen' layout, 16 if layout is 'padded'
+        offsetX: 8, // default is 0 if story has 'fullscreen' layout, 16 if layout is 'padded'
+        offsetY: 8 // default is 0 if story has 'fullscreen' layout, 16 if layout is 'padded'
       }
     }
   },
@@ -43,7 +45,7 @@ export default {
 
 // Function to render the template.
 const Template = ({ ...args }) => {
-  // Returns button template with arguments passed to it.
+  // Returns footer template with arguments passed to it.
   return footer({ ...args });
 };
 
@@ -53,7 +55,7 @@ const Template = ({ ...args }) => {
 // Default Footer.
 export const DefaultFooter = Template.bind({});
 DefaultFooter.args = {
-  label: "Default Footer"
+  // label: "Default Footer"
 };
 // TODO: this style is deprecated, check the SB docs and change it.
 DefaultFooter.story = {
