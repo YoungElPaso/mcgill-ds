@@ -28,7 +28,7 @@ jobs:
       env: # Or as an environment variable
         FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
     - run: npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-    - run: npm config set "//npm.fontawesome.com/:_authToken" FONTAWESOME_NPM_AUTH_TOKEN
+    - run: npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOKEN
     - run: npm ci # Install npm deps.
     - run: npm run build-storybook # Run build-storybook.
     
