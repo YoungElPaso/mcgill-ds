@@ -25,10 +25,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      env: # Or as an environment variable
-        FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+      #env: # Or as an environment variable
+      #  FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
     - run: npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-    - run: npm config set "//npm.fontawesome.com/:_authToken" "$FONTAWESOME_NPM_AUTH_TOKEN"
+    - run: npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKENS }}
     - run: npm install # Install npm deps.
     - run: npm install @fortawesome/fontawesome-pro #Install FA peer-dep.
     - run: npm run build-storybook # Run build-storybook.
