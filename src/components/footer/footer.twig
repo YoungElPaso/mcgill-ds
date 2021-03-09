@@ -35,22 +35,22 @@
     {% endblock %}
   {% endembed %}
 </div>
-<div class="md:flex flex-grow justify-end">
+<div class="md:flex flex-grow justify-end dark">
   {% embed '../box/box.twig' with {"modifiers": "" }%}
     {% block content %}
-      <a href="#">Accessibility</a>
+      <a class="m-3 p-3 inline-block" href="#">Accessibility</a>
     {% endblock %}
   {% endembed %}
 
   {% embed '../box/box.twig' with {"modifiers": " "} %}
     {% block content %}
-      <a href="#">Privacy notice</a>
+      <a href="#" class="m-3 p-3 inline-block">Privacy notice</a>
     {% endblock %}
   {% endembed %}
 
   {% embed '../box/box.twig' with {"modifiers": " "}%}
     {% block content %}
-      <a href="#">Contact us</a>
+    <button class="mds-button" href="#" title="Site Maintenance">Login <i class="ml-1 fal fa-lock"></i> </button>
     {% endblock %}
   {% endembed %}
 {% endblock %}
@@ -72,9 +72,9 @@
   </div>
 
   <!-- Admin Links. -->
-  <div id="admin-links" class="m-3 p-3 place-self-end">
-    <a class="m-3" id="accessibility-link" title="accessibility" href="https://www.mcgill.ca/accessibility">Accessibility</a>
-    <a class="mds-button--secondary" href="/desautels/saml_login?destination=node/65144" title="Site Maintenance">Sign in (site maintenance)</a>
+  <div id="admin-links" class="m-3 p-3 dark place-self-end md:flex">
+    <a class="m-3 p-3" id="accessibility-link" title="accessibility" href="https://www.mcgill.ca/accessibility">Accessibility</a>
+    <button class="mds-button" href="/desautels/saml_login?destination=node/65144" title="Site Maintenance">Login <i class="ml-1 fal fa-lock"></i> </button>
   </div>
 </div>
 <!-- End of Legacy WMS Footer. -->

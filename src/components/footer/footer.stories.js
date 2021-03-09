@@ -53,12 +53,12 @@ const Template = ({ ...args }) => {
 // Replace with Theme Add-on.
 
 // Default Footer.
-export const DefaultFooter = Template.bind({});
-DefaultFooter.args = {
+export const DefaultAndLegacyFooter = Template.bind({});
+DefaultAndLegacyFooter.args = {
   // label: "Default Footer"
 };
 // TODO: this style is deprecated, check the SB docs and change it.
-DefaultFooter.story = {
+DefaultAndLegacyFooter.story = {
   parameters: {
     controls: { disable: true },
     actions: { disable: true }
