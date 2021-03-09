@@ -23,7 +23,7 @@
   "author": "Jesse Sutherland",
   "license": "ISC",
   "peerDependencies": {
-    "line-awesome": "^1.3.0"
+    "@fortawesome/fontawesome-pro": "^5.15.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
