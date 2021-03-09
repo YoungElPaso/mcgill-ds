@@ -68,7 +68,7 @@ test("Find Default Footer.", async () => {
   getAllByAltText(container, /mcgill.*?logo/i);
 
   // Check that some of the default text is present.
-  getAllByText(container, /contact.*?us/i);
+  getAllByText(container, /privacy.*?us/i);
 });
 
 // Test the Footer template with overriden child content.
