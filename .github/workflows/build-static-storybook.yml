@@ -21,12 +21,13 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     
-    - shell: bash
+    - name: Test
+      shell: bash
       env: # Or as an environment variable
         TEST: $ {{ secrets.TEST_SECRET }}
         FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}    
-    - if: env.TEST != null   
-    - run: echo $TEST
+      if: env.TEST != null   
+      run: echo $TEST
     
     - name: Build with Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
