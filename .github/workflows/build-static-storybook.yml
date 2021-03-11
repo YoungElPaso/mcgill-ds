@@ -24,7 +24,7 @@ jobs:
     - name: Test
       shell: bash
       env: # Or as an environment variable
-        TEST: $ {{ secrets.TEST_SECRET }}
+        TEST: ${{ secrets.TEST_SECRET }}
         FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}    
       if: env.TEST != null   
       run: echo $TEST
