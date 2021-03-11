@@ -21,9 +21,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     
-    - name: Test
+    - name: Test secrets
       shell: bash
-      env: # Or as an environment variable
+      env:
         TEST: ${{ secrets.TEST_SECRET }}
         FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}    
       if: env.TEST != null   
@@ -35,16 +35,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
    
     - name: Run NPM Install main deps
-      env: # Or as an environment variable
-        TEST: ${{ secrets.TEST_SECRET }}
-        FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}    
-      run: echo $TEST
-        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-        npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOKEN
-        npm install # Install npm deps.
+      run: npm install # Install npm deps.
 
     - name: NPM Install FontAwesome Peer
-      run: npm install @fortawesome/fontawesome-pro #Install FA peer-dep.
+      env: # Or as an environment variable
+        FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}    
+      run: npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+        npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOKEN
+        npm install @fortawesome/fontawesome-pro #Install FA peer-dep.
 
     - name: Build Storybook
       run: npm run build-storybook # Run build-storybook.
