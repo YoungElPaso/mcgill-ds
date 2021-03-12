@@ -2,7 +2,7 @@
 import Twig from "twig";
 
 // Import the twig template.
-import footer from "./footer.twig";
+import footer from "./legacy-footer.twig";
 
 // Import the drupal Twig filters.
 import drupal from "twig-drupal-filters";
@@ -13,7 +13,7 @@ drupal(Twig);
 Twig.cache();
 
 export default {
-  title: "Twig Templates",
+  title: "WIP/Legacy Footer",
   parameters: {
     // To disable docs page content:
     // docs: { page: null }
@@ -52,13 +52,13 @@ const Template = ({ ...args }) => {
 // TODO: evaluate do we need a DarkTemplate for footer? Doubt it...
 // Replace with Theme Add-on.
 
-// Default Footer.
-export const DefaultFooter = Template.bind({});
-DefaultFooter.args = {
+// Legacy Footer.
+export const LegacyFooter = Template.bind({});
+LegacyFooter.args = {
   // label: "Default Footer"
 };
 // TODO: this style is deprecated, check the SB docs and change it.
-DefaultFooter.story = {
+LegacyFooter.story = {
   parameters: {
     controls: { disable: true },
     actions: { disable: true }

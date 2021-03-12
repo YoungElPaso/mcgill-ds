@@ -4,3 +4,4 @@ node_modules
 tmp
 .npmrc
 sandbox.config.json
+storybook-static

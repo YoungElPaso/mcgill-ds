@@ -56,25 +56,3 @@
 {% endblock %}
 </div>
 </footer>
-
-<br />
-<!-- Legacy WMS Footer. -->
-<div id="sub-footer-inner" class="text-center md:grid grid-cols-3 place-content-center items-center p-4 px-8 bg-black text-white">
-  <!-- Logo in the foam. -->
-  <a id="mcgill-watermark" title="return to McGill University" href="https://www.mcgill.ca" class="inline-block m-3">
-    {% include './footer-logo.twig' with {"modifiers": 'mr-8'} %}
-    <span id="university-watermark" class="offscreen sr-only">McGill University</span>
-  </a>
-
-  <!-- Copyright. -->
-  <div id="copyright" class="m-3 p-3 text-gray text-sm ">
-    Copyright © 2021 McGill University
-  </div>
-
-  <!-- Admin Links. -->
-  <div id="admin-links" class="m-3 p-3 dark place-self-end md:flex">
-    <a class="m-3 p-3" id="accessibility-link" title="accessibility" href="https://www.mcgill.ca/accessibility">Accessibility</a>
-    <button class="mds-button" href="/desautels/saml_login?destination=node/65144" title="Site Maintenance">Login <i class="ml-1 fal fa-lock"></i> </button>
-  </div>
-</div>
-<!-- End of Legacy WMS Footer. -->
