@@ -7,11 +7,12 @@ const env = {
 };
 
 module.exports = {
-  // By default, include any stories, including WIP's in the WIP directory.
+  // By default, include any stories, including WIP's.
   stories: [
     "../src/components/**/*.stories.mdx",
-    "../src/wips/**/*.stories.mdx",
-    "../src/components/**/*.stories.@(js|jsx|ts|tsx)"
+    "../src/components/**/*.stories.@(js|jsx|ts|tsx)",
+    "../src/components/**/*.wip-stories.mdx",
+    "../src/components/**/*.wip-stories.@(js|jsx|ts|tsx)"
   ],
 
   // Exclude WIP stories only on prod.
