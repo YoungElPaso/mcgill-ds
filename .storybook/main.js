@@ -1,11 +1,28 @@
 // Configuration adn settings for Storybook.
 const path = require("path");
 
+// Figure out some environment variables.
+const env = {
+  prod: process.env.NODE_ENV === "production"
+};
+
 module.exports = {
+  // By default, include any stories, including WIP's in the WIP directory.
   stories: [
     "../src/components/**/*.stories.mdx",
+    "../src/wips/**/*.stories.mdx",
     "../src/components/**/*.stories.@(js|jsx|ts|tsx)"
   ],
+
+  // Exclude WIP stories only on prod.
+  // NODE_ENV===production.
+  ...(env["prod"] && {
+    stories: [
+      "../src/components/**/*.stories.mdx",
+      "../src/components/**/*.stories.@(js|jsx|ts|tsx)"
+    ]
+  }),
+
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",

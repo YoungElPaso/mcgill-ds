@@ -4,10 +4,14 @@ import "../src/css/mds-tw-base.css";
 // Import MDS CSS - the CSS thats custom to the MDS.
 import "../src/css/mds-shared.css";
 
-// Import FA CSS.
+// Import FA CSS as a peer dependency.
 import "@fortawesome/fontawesome-pro/css/fontawesome.css";
 import "@fortawesome/fontawesome-pro/css/light.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" }
 };
+
+// TODO: resume DSM deploy deps.
+
+// TODO: resume FA/Details/Icon work.
