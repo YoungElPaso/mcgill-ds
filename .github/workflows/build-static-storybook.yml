@@ -40,10 +40,12 @@ jobs:
     - name: NPM Install FontAwesome Peer
       env: # Or as an environment variable
         FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}    
-      run: npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+      run: |
+        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
         npm config set "//npm.fontawesome.com/:_authToken" $FONTAWESOME_NPM_AUTH_TOKEN
         npm install @fortawesome/fontawesome-pro #Install FA peer-dep.
-
+        ls ./node_modules/@fortawesome/
+        
     - name: Build Storybook
       run: npm run build-storybook # Run build-storybook.
     
