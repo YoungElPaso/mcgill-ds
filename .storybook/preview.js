@@ -5,8 +5,8 @@ import "../src/css/mds-tw-base.css";
 import "../src/css/mds-shared.css";
 
 // Import FA CSS.
-import "../node_modules/@fortawesome/fontawesome-pro/css/fontawesome.css";
-import "../node_modules/@fortawesome/fontawesome-pro/css/light.css";
+import "@fortawesome/fontawesome-pro/css/fontawesome.css";
+import "@fortawesome/fontawesome-pro/css/light.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" }

@@ -14,6 +14,7 @@
     "start": "start-storybook --ci --port=3001 -s ./src/assets",
     "unit-tests": "jest --no-cache",
     "build-storybook": "build-storybook -s ./src/assets",
+    "fa-peer-setup": "npm config set \"@fortawesome:registry\" https://npm.fontawesome.com/ && npm config set \"//npm.fontawesome.com/:_authToken\" $FONTAWESOME_NPM_AUTH_TOKEN",
     "build-postcss": "cross-env-shell NODE_ENV=production \"cat src/css/mds-tw-base.css src/css/mds-shared.css | postcss -o dist/css/mds-shared.css\""
   },
   "publishConfig": {
