@@ -8,6 +8,12 @@ import "../src/css/mds-shared.css";
 import "@fortawesome/fontawesome-pro/css/fontawesome.css";
 import "@fortawesome/fontawesome-pro/css/light.css";
 
+// Import DSM decorator.
+import { withDsm } from "@invisionapp/dsm-storybook";
+
+// Export DSM decorator.
+export const decorators = [withDsm];
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" }
 };

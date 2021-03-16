@@ -1,0 +1,9 @@
+# Using: process.env.DSM_AUTH_TOKEN
+# Rather than: "authToken": "${DSM_AUTH_TOKEN}",
+# see: https://github.com/InVisionApp/dsm-storybook-cli/issues/16
+{
+  "dsmHost": "mcgill.invisionapp.com",
+  "organization": "mc-gill-university",
+  "outputDir": ".dsm",
+  "storyPath": "src/components/**/*.stories.js"
+}

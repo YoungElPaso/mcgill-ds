@@ -15,6 +15,8 @@
     "unit-tests": "jest --no-cache",
     "build-storybook": "NODE_ENV=production build-storybook -s ./src/assets",
     "fa-peer-setup": "npm config set \"@fortawesome:registry\" https://npm.fontawesome.com/ && npm config set \"//npm.fontawesome.com/:_authToken\" $FONTAWESOME_NPM_AUTH_TOKEN && npm install @fortawesome/fontawesome-pro --no-save",
+    "dsm-storybook:publish": "NODE_ENV=STORYBOOK_DSM dsm-storybook publish",
+    "dsm-storybook:preview": "NODE_ENV=STORYBOOK_DSM dsm-storybook preview",
     "build-postcss": "cross-env-shell NODE_ENV=production \"cat src/css/mds-tw-base.css src/css/mds-shared.css | postcss -o dist/css/mds-shared.css\""
   },
   "publishConfig": {
@@ -54,7 +56,9 @@
     "cross-env": "^7.0.0",
     "file-loader": "^5.0.2",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.23.7"
+    "sass": "^1.23.7",
+    "@invisionapp/dsm-storybook": "0.0.142",
+    "@storybook/addon-options": "^5.3.21"
   },
   "engines": {
     "node": ">=12"

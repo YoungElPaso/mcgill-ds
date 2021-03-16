@@ -29,7 +29,9 @@ module.exports = {
     "@storybook/addon-essentials",
     // Adds a HTML view - very useful for docs, showing the exact markup a
     // component renders. IE. what a user would consider the 'source'.
-    "@whitespace/storybook-addon-html"
+    "@whitespace/storybook-addon-html",
+    // Adds DSM integration.
+    "@invisionapp/dsm-storybook"
   ],
   // Adjusting the SB webpack configuration.
   webpackFinal: async (config, { configType }) => {

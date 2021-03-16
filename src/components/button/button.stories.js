@@ -106,9 +106,11 @@ PrimaryBranded.args = {
 // see: https://stackoverflow.com/questions/59680328/hide-addon-per-story-in-storybook
 PrimaryBranded.story = {
   parameters: {
-    controls: { disable: true }
+    controls: { disable: true },
+    "in-dsm": { id: "60428ccc05d5fe4ba072ca8a" }
   }
 };
+// TODO: need to contiue here: https://support.invisionapp.com/hc/en-us/articles/360048142812 - adding these options and other DSM integration items.
 
 // Secondary Button.
 export const Secondary = Template.bind({});
