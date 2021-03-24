@@ -5,3 +5,4 @@ tmp
 .npmrc
 sandbox.config.json
 storybook-static
+.dsm
