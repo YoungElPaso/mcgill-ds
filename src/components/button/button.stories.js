@@ -87,6 +87,9 @@ const DarkTemplate = ({ ...args }) => {
   </div>`;
 };
 
+// Using template literal instead of template.bind()
+// DSM has existing issue with using template.bind and
+// picking up "in-dsm" property.
 export const PrimaryDSM = (args) => {
   return `
     <div>
