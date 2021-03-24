@@ -4,6 +4,8 @@ import Twig from "twig";
 // Import the twig template.
 import button from "./button.twig";
 
+// import { withDsm } from "@invisionapp/dsm-storybook";
+
 // If desired could also import a component specific JS file.
 // E.g.
 // import buttonjs from "./button.js";
@@ -17,6 +19,7 @@ export default {
   parameters: {
     // To disable docs page content:
     // docs: { page: null }
+    "in-dsm": { id: "60428ccc05d5fe4ba072ca8a" }
   },
   argTypes: {
     label: {
@@ -84,6 +87,18 @@ const DarkTemplate = ({ ...args }) => {
   </div>`;
 };
 
+export const PrimaryDSM = (args) => {
+  return `
+    <div>
+      ${button({ ...args })}
+    </div>
+  `;
+};
+PrimaryDSM.args = {
+  label: "DSM Primary",
+  "in-dsm": { id: "60428ccc05d5fe4ba072ca8a" }
+};
+
 // Primarty Button, aka default.
 export const Primary = Template.bind({});
 Primary.args = {
@@ -106,8 +121,7 @@ PrimaryBranded.args = {
 // see: https://stackoverflow.com/questions/59680328/hide-addon-per-story-in-storybook
 PrimaryBranded.story = {
   parameters: {
-    controls: { disable: true },
-    "in-dsm": { id: "60428ccc05d5fe4ba072ca8a" }
+    controls: { disable: true }
   }
 };
 // TODO: need to contiue here: https://support.invisionapp.com/hc/en-us/articles/360048142812 - adding these options and other DSM integration items.

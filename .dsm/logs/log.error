@@ -1,0 +1,223 @@
+
+---------------------------------------------------      DSM Log Start      ---------------------------------------------------
+Error message: No stories with DSM component container IDs were found. For further assistance visit (https://support.invisionapp.com). 
+  
+Created Date: 3/16/2021, 2:23:49 AM
+Story file path: No story file path
+Component file path: Not found in "in-dsm"
+
+###  FILE: package.json
+  
+{
+  "pkg": {
+    "name": "unofficial-mds-v110",
+    "version": "1.1.0",
+    "description": "Unofficial and experimental version MDS.",
+    "main": "src/mds.scss",
+    "scripts": {
+      "sass": "echo \"watching for changes\" npm run css && sass --load-path=src/sass --watch src/sass:dist/css",
+      "build": "npm run build:copy-assets && npm run build:css",
+      "build:copy-assets": "cp -r ./src/sass/assets/* dist/assets",
+      "build:css": "npm run build:main-css && npm run build:css-components",
+      "build:main-css": "sass --load-path=src/sass src/sass/mds.scss:dist/css/all/mds.css",
+      "build:css-components": "sass --load-path=src/sass src/sass/components:dist/css/components",
+      "test": "npm run unit-tests",
+      "start": "start-storybook --ci --port=3001 -s ./src/assets",
+      "unit-tests": "jest --no-cache",
+      "build-storybook": "NODE_ENV=production build-storybook -s ./src/assets",
+      "fa-peer-setup": "npm config set \"@fortawesome:registry\" https://npm.fontawesome.com/ && npm config set \"//npm.fontawesome.com/:_authToken\" $FONTAWESOME_NPM_AUTH_TOKEN && npm install @fortawesome/fontawesome-pro --no-save",
+      "dsm-storybook:publish": "dsm-storybook publish",
+      "dsm-storybook:preview": "dsm-storybook preview",
+      "build-postcss": "cross-env-shell NODE_ENV=production \"cat src/css/mds-tw-base.css src/css/mds-shared.css | postcss -o dist/css/mds-shared.css\""
+    },
+    "publishConfig": {
+      "@wsg-public:registry": "https://gitlab.ncs.mcgill.ca/api/v4/projects/811/packages/npm/"
+    },
+    "keywords": [],
+    "author": {
+      "name": "Jesse Sutherland"
+    },
+    "license": "ISC",
+    "peerDependencies": {
+      "@fortawesome/fontawesome-pro": "^5.15.2"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.12.16",
+      "@babel/preset-env": "^7.12.16",
+      "@storybook/addon-actions": "^6.1.18",
+      "@storybook/addon-essentials": "^6.1.18",
+      "@storybook/addon-links": "^6.1.18",
+      "@storybook/html": "^6.1.18",
+      "@tailwindcss/postcss7-compat": "^2.0.3",
+      "@testing-library/dom": "7.29.4",
+      "@testing-library/jest-dom": "5.11.9",
+      "@whitespace/storybook-addon-html": "4.2.0",
+      "autoprefixer": "^9.8.6",
+      "babel-loader": "^8.2.2",
+      "cssnano": "4.1.10",
+      "cssnano-preset-default": "4.0.7",
+      "jest": "^26.6.2",
+      "postcss": "^7.0.35",
+      "postcss-cli": "^7.0.0",
+      "postcss-load-config": "3.0.1",
+      "postcss-loader": "4.0.0",
+      "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3",
+      "twig": "1.15.4",
+      "twig-drupal-filters": "3.1.2",
+      "twig-loader": "0.5.5",
+      "twig-testing-library": "1.1.1",
+      "cross-env": "^7.0.0",
+      "file-loader": "^5.0.2",
+      "npm-run-all": "^4.1.5",
+      "sass": "^1.23.7",
+      "@invisionapp/dsm-storybook": "0.0.142",
+      "@storybook/addon-options": "^5.3.21"
+    },
+    "engines": {
+      "node": ">=12"
+    },
+    "readme": "ERROR: No README data found!",
+    "_id": "unofficial-mds-v110@1.1.0"
+  },
+  "path": "/sandbox/package.json"
+}
+
+###  FILE: '.dsmrc'
+  
+{
+  "dsmHost": "mcgill.invisionapp.com",
+  "organization": "mc-gill-university",
+  "outputDir": ".dsm",
+  "storyPath": "src/components/**/*.stories.js"
+}
+
+####  STORYBOOK CONFIG /sandbox/.storybook/*
+   
+
+###  FILE: /sandbox/.storybook/main.js
+  
+// Configuration adn settings for Storybook.
+const path = require("path");
+
+// Figure out some environment variables.
+const env = {
+  prod: process.env.NODE_ENV === "production"
+};
+
+module.exports = {
+  // By default, include any stories, including WIP's.
+  stories: [
+    "../src/components/**/*.stories.mdx",
+    "../src/components/**/*.stories.@(js|jsx|ts|tsx)",
+    "../src/components/**/*.wip-stories.mdx",
+    "../src/components/**/*.wip-stories.@(js|jsx|ts|tsx)"
+  ],
+
+  // Exclude WIP stories only on prod.
+  // NODE_ENV===production.
+  ...(env["prod"] && {
+    stories: [
+      "../src/components/**/*.stories.mdx",
+      "../src/components/**/*.stories.@(js|jsx|ts|tsx)"
+    ]
+  }),
+
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    // Adds a HTML view - very useful for docs, showing the exact markup a
+    // component renders. IE. what a user would consider the 'source'.
+    "@whitespace/storybook-addon-html",
+    // Adds DSM integration.
+    "@invisionapp/dsm-storybook"
+  ],
+  // Adjusting the SB webpack configuration.
+  webpackFinal: async (config, { configType }) => {
+    // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
+    // You can change the configuration based on that.
+    // 'PRODUCTION' is used when building the static version of storybook.
+
+    // Add some rules to the default SB webpack configuration.
+    config.module.rules.push(
+      // Required to load SVG and other images and files.
+      {
+        test: /\.(png|svg|jpg|gif|woff)$/,
+        use: ["file-loader"],
+        include: path.resolve(__dirname, "../")
+      },
+      // Adds support for loading Twig templates.
+      {
+        test: /\.twig$/,
+        use: ["twig-loader"],
+        include: path.resolve(__dirname, "../")
+      },
+      // Adds support for TailwindCSS via postcss-loader.
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "postcss-loader"
+          }
+        ],
+        include: path.resolve(__dirname, "../")
+      }
+    );
+
+    // Return the altered config.
+    return config;
+  }
+};
+
+,
+###  FILE: /sandbox/.storybook/manager.js
+  
+import { addons } from "@storybook/addons";
+
+// Adds DSM config.
+import { getDsmOptions } from "@invisionapp/dsm-storybook";
+addons.setConfig({
+  ...getDsmOptions(process.env.STORYBOOK_DSM)
+});
+
+,
+###  FILE: /sandbox/.storybook/preview-head.html
+  
+<!-- Have to add ionicons here, no other easy way to load em! This is the recommended way by the authors. Annoying.-->
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"
+></script>
+<script
+  nomodule=""
+  src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"
+></script>
+
+,
+###  FILE: /sandbox/.storybook/preview.js
+  
+// Import Tailwind CSS base, components and utilities.
+import "../src/css/mds-tw-base.css";
+
+// Import MDS CSS - the CSS thats custom to the MDS.
+import "../src/css/mds-shared.css";
+
+// Import FA CSS as a peer dependency.
+import "@fortawesome/fontawesome-pro/css/fontawesome.css";
+import "@fortawesome/fontawesome-pro/css/light.css";
+
+// Import DSM decorator.
+import { withDsm } from "@invisionapp/dsm-storybook";
+
+// Export DSM decorator.
+export const decorators = [withDsm];
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" }
+};
+
+// TODO: resume DSM deploy deps.
+
+// TODO: resume FA/Details/Icon work.
+
+ 
+---------------------------------------------------      DSM Log End      -----------------------------------------------------
